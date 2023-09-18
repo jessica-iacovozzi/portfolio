@@ -1,0 +1,8 @@
+.header-bg {
+  background-image: url('assets/black-bg-4.png');
+  background-size: 100%;
+}
+
+.header-text {
+  text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
