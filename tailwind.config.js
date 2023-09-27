@@ -7,10 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'orange': {
-          'light': '#F9943B',
-          'dark': '#F7773C'
+        'pink': {
+          DEFAULT: '#FFC0CB'
         }
+      },
+      borderWidth: {
+        '1.5': '1.5px',
+        '2.5': '2.5px',
+        '3': '3px'
       },
     },
   },

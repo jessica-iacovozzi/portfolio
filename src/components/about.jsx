@@ -4,18 +4,22 @@ import Image from './Image';
 import { TypeAnimation } from 'react-type-animation';
 import { useRef, useEffect } from 'react';
 
-function About({ scrollAbout }) {
+function About({ scrollAbout, setScrollAbout }) {
   const aboutRef = useRef(null);
-  const marginTop = '100px';
+  const marginTop = 85;
 
   useEffect(() => {
+    const scrollToTargetWithMargin = () => {
         const targetScrollPosition = aboutRef.current.offsetTop - marginTop;
+        setScrollAbout(false);
 
         window.scrollTo({
           top: targetScrollPosition,
           behavior: 'smooth',
         });
+    };
 
+    scrollToTargetWithMargin();
   }, [scrollAbout]);
 
   return (

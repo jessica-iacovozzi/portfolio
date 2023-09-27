@@ -17,7 +17,7 @@ function App() {
 
     if (divElement) {
       const rect = divElement.getBoundingClientRect();
-      const isAtTop = rect.top <= 0;
+      const isAtTop = rect.top <= 85;
 
       setIsAboutAtTop(isAtTop);
     }
@@ -29,13 +29,13 @@ function App() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [scrollAbout]);
 
   return (
     <>
       <Navbar aboutAtTop={isAboutAtTop} scrollToAbout={scrollToAbout} />
       <Header />
-      <About scrollAbout={scrollAbout} />
+      <About scrollAbout={scrollAbout} setScrollAbout={setScrollAbout} />
     </>
   )
 }

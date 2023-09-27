@@ -1,7 +1,8 @@
 import MovingComponent from 'react-moving-text';
+import './Navbar.css';
 
 function Navbar({ aboutAtTop, scrollToAbout }) {
-  const divClassnames = aboutAtTop ? 'backdrop-blur-sm border-b-0.5 transition-all ease duration-250 border-transparent bg-transparent' : 'border-b-0.5 transition-all ease border-transparent bg-transparent'
+  const divClassnames = aboutAtTop ? 'backdrop-blur border-b-2.5 border-gray-950 transition-all ease duration-250 bg-transparent' : 'border-b-0.5 transition-all ease border-transparent bg-transparent'
 
   return (
     <header className='w-full fixed top-0 z-40'>

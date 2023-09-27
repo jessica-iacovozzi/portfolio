@@ -17,7 +17,7 @@ export default function Image({ name }) {
           ? { WebkitMaskImage: visibleMask, maskImage: visibleMask }
           : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
       }
-      transition={{ duration: 1.25, delay: 1.5 }}
+      transition={{ duration: 1, delay: 1 }}
       viewport={{ once: true }}
       onViewportEnter={() => setIsInView(true)}
     >

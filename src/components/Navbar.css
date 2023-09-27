@@ -1,0 +1,13 @@
+button:after {
+  display:block;
+  content: '';
+  width: inherit;
+  border-bottom: solid 2px pink;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+button:hover:after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
