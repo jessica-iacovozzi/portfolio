@@ -4,12 +4,14 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import About from './components/About';
 import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 function App() {
   const [isAboutAtTop, setIsAboutAtTop] = useState(false);
   const [scroll, setScroll] = useState();
   const aboutRef = useRef();
   const projectsRef = useRef();
+  const contactRef = useRef();
   const marginTop = 85;
 
   useEffect(() => {
@@ -21,7 +23,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(scroll)
     const scrollToTargetWithMargin = () => {
         if(scroll) {
           const targetScrollPosition = scroll.current.offsetTop - marginTop;
@@ -58,6 +59,7 @@ function App() {
       <Header />
       <About aboutRef={aboutRef} />
       <Projects projectsRef={projectsRef} />
+      <Contact contactRef={contactRef} />
     </>
   )
 }

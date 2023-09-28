@@ -1,0 +1,5 @@
+input:focus-visible, textarea:focus-visible {
+  outline: pink auto 2px;
+  outline-offset: 4px;
+  border: 1px solid pink;
+}
