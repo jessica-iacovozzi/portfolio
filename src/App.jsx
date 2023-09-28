@@ -1,15 +1,44 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import About from './components/About';
+import Projects from './components/Projects';
 
 function App() {
   const [isAboutAtTop, setIsAboutAtTop] = useState(false);
-  const [scrollAbout, setScrollAbout] = useState(false);
+  const [scroll, setScroll] = useState();
+  const aboutRef = useRef();
+  const projectsRef = useRef();
+  const marginTop = 85;
 
-  const scrollToAbout = () => {
-    setScrollAbout(true);
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log(scroll)
+    const scrollToTargetWithMargin = () => {
+        if(scroll) {
+          const targetScrollPosition = scroll.current.offsetTop - marginTop;
+          setScroll('');
+
+          window.scrollTo({
+            top: targetScrollPosition,
+            behavior: 'smooth',
+          });
+        }
+    };
+
+    scrollToTargetWithMargin();
+  }, [scroll]);
+
+  const scrollToRef = (ref) => {
+    setScroll(ref);
   };
 
   const handleScroll = () => {
@@ -23,19 +52,12 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrollAbout]);
-
   return (
     <>
-      <Navbar aboutAtTop={isAboutAtTop} scrollToAbout={scrollToAbout} />
+      <Navbar aboutAtTop={isAboutAtTop} scrollToRef={scrollToRef} aboutRef={aboutRef} projectsRef={projectsRef} />
       <Header />
-      <About scrollAbout={scrollAbout} setScrollAbout={setScrollAbout} />
+      <About aboutRef={aboutRef} />
+      <Projects projectsRef={projectsRef} />
     </>
   )
 }

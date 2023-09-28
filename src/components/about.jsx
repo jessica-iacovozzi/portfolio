@@ -2,28 +2,10 @@ import './About.css';
 import me from '../assets/me.png';
 import Image from './Image';
 import { TypeAnimation } from 'react-type-animation';
-import { useRef, useEffect } from 'react';
 
-function About({ scrollAbout, setScrollAbout }) {
-  const aboutRef = useRef(null);
-  const marginTop = 85;
-
-  useEffect(() => {
-    const scrollToTargetWithMargin = () => {
-        const targetScrollPosition = aboutRef.current.offsetTop - marginTop;
-        setScrollAbout(false);
-
-        window.scrollTo({
-          top: targetScrollPosition,
-          behavior: 'smooth',
-        });
-    };
-
-    scrollToTargetWithMargin();
-  }, [scrollAbout]);
-
+function About({ aboutRef }) {
   return (
-    <div id="about" ref={aboutRef} className='h-screen'>
+    <div ref={aboutRef} id='about' className='h-screen'>
       <div className='h-5/6 flex relative bg-[#ffc0cb] m-10 rounded-lg'>
         <div className='rounded-s-lg overflow-hidden flex-1 flex justify-center items-center'>
           <Image name={me} />
@@ -35,7 +17,7 @@ function About({ scrollAbout, setScrollAbout }) {
             sequence={[
               " I develop web applications with React.",
               1000,
-              " I develop web applications with Hotwire.",
+              " I develop web applications with Stimulus.",
               1000,
               " I develop web applications with Ruby on Rails.",
               1000,

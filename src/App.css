@@ -1,3 +1,18 @@
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.link:after {
+  display:block;
+  content: '';
+  width: inherit;
+  border-bottom: solid 2px pink!important;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.link:hover:after {
+  transform: scaleX(1);
+  transform-origin: left;
 }

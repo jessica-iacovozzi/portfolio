@@ -1,0 +1,15 @@
+.slider {
+  width: -webkit-fill-available;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white!important;
+}
+
+.slick-dots li button:before {
+  color: white!important;
+}
+
+.slick-dots {
+  bottom: 65px!important;
+}
