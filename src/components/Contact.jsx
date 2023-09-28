@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import './Contact.css';
-import { MdEmail } from "react-icons/md";
+import { TfiEmail} from 'react-icons/tfi';
 
 export default function ContactUs({ contactRef }) {
   const [buttonState, setButtonState] = useState('Send Message');
@@ -47,7 +47,7 @@ export default function ContactUs({ contactRef }) {
             <p className='text-gray-400 text-3xl mb-20'>Let&#39;s bring your idea to life.</p>
             <div className='group'>
               <a className="flex items-center text-pink text-lg group-hover:text-white" href="mailto:iacovozzi.jessica@gmail.com">
-                <MdEmail className='text-pink me-1 group-hover:text-white' />
+                <TfiEmail className='text-pink me-1 group-hover:text-white' />
                 iacovozzi.jessica@gmail.com
               </a>
             </div>
