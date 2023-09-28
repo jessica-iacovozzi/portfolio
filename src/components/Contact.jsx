@@ -3,10 +3,38 @@ import emailjs from '@emailjs/browser';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import './Contact.css';
+import styles from "../App.module.css";
+import classNames from "classnames";
+import toast, { Toaster } from "react-hot-toast";
 import { TfiEmail} from 'react-icons/tfi';
+import { MdOutlineClose } from "react-icons/md";
+import { SiMinutemailer } from "react-icons/si";
 
 export default function ContactUs({ contactRef }) {
   const [buttonState, setButtonState] = useState('Send Message');
+
+  const notify = () =>
+    toast.custom(
+      (t) => (
+        <div
+          className={classNames([
+            styles.notificationWrapper,
+            t.visible ? "top-0" : "-top-96",
+          ])}
+        >
+          <div className={styles.iconWrapper}>
+            <SiMinutemailer />
+          </div>
+          <div className={styles.contentWrapper}>
+            <h1>Message sent successfully!</h1>
+          </div>
+          <div className={styles.closeIcon} onClick={() => toast.dismiss(t.id)}>
+            <MdOutlineClose />
+          </div>
+        </div>
+      ),
+      { id: "unique-notification", position: "top-right" }
+  );
 
   const formik = useFormik({
     initialValues: {
@@ -28,6 +56,7 @@ export default function ContactUs({ contactRef }) {
            setButtonState('Send Message');
            setSubmitting(false);
            resetForm();
+           notify();
               });
        }
        catch {
@@ -39,6 +68,7 @@ export default function ContactUs({ contactRef }) {
 
   return (
     <div ref={contactRef} id='contact' className='h-screen'>
+      <Toaster />
       <div className='flex flex-col items-center relative bg-gray-950/80 backdrop-blur border-y-1.5 border-pink'>
         <h2 className='text-gray-400 text-lg mt-12'>CONTACT ME</h2>
         <div className='flex justify-around my-24'>
