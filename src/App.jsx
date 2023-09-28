@@ -55,7 +55,7 @@ function App() {
 
   return (
     <>
-      <Navbar aboutAtTop={isAboutAtTop} scrollToRef={scrollToRef} aboutRef={aboutRef} projectsRef={projectsRef} />
+      <Navbar aboutAtTop={isAboutAtTop} scrollToRef={scrollToRef} aboutRef={aboutRef} projectsRef={projectsRef} contactRef={contactRef} />
       <Header />
       <About aboutRef={aboutRef} />
       <Projects projectsRef={projectsRef} />
