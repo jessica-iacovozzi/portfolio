@@ -1,0 +1,11 @@
+.header-text {
+  text-shadow:  2px 2px 1px rgb(0, 0, 0);
+  @media (max-height: 600px) {
+    font-size: 5rem!important;
+  }
+}
+
+.header-div {
+  /* padding: 0 100px!important; */
+  margin-top: 200px!important;
+}
