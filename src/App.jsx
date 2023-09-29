@@ -7,7 +7,7 @@ import Projects from './components/Projects.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 
-function App() {
+export default function App() {
   const [isAboutAtTop, setIsAboutAtTop] = useState(false);
   const [scroll, setScroll] = useState();
   const aboutRef = useRef();
@@ -65,5 +65,3 @@ function App() {
     </>
   )
 }
-
-export default App;
