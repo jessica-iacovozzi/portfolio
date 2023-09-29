@@ -13,3 +13,22 @@
 .slick-dots {
   bottom: 65px!important;
 }
+
+.slick-dots {
+  bottom: 65px!important;
+  @media (max-height: 850px) {
+    bottom: 30px!important;
+  }
+  @media (min-height: 851px) and (max-height: 900px) {
+    bottom: 40px!important;
+  }
+}
+
+.project-img {
+  @media (min-height: 851px) and (max-height: 900px) {
+    margin-bottom: 4rem;
+  }
+  @media (min-height: 700px) and (max-height: 736px) {
+    margin-bottom: 3rem;
+  }
+}

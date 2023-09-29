@@ -3,3 +3,18 @@ input:focus-visible, textarea:focus-visible {
   outline-offset: 4px;
   border: 1px solid pink;
 }
+
+#contact {
+  @media (max-height: 700px) {
+    margin-top: 24rem;
+  }
+  @media (min-height: 700px) and (max-height: 736px) {
+    margin-top: 20rem;
+  }
+  @media (min-height: 737px) and (max-height: 850px) {
+    margin-top: 13rem;
+  }
+  @media (min-height: 851px) and (max-height: 900px) {
+    margin-top: 12rem;
+  }
+}

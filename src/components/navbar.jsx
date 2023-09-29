@@ -1,5 +1,4 @@
 import MovingComponent from 'react-moving-text';
-import './Navbar.css';
 
 function Navbar({ aboutRef, projectsRef, contactRef, aboutAtTop, scrollToRef }) {
   const divClassnames = aboutAtTop ? 'backdrop-blur border-b-2.5 border-gray-950 transition-all ease duration-250 bg-gray-950/70' : 'border-b-0.5 transition-all ease border-transparent bg-transparent'
@@ -15,9 +14,9 @@ function Navbar({ aboutRef, projectsRef, contactRef, aboutAtTop, scrollToRef }) 
           timing="ease"
           iteration="1"
           fillMode="both">
-          <ul className='flex text-gray-200 text-xl px-14 py-7'>
-            <button onClick={() => scrollToRef(aboutRef)} className='me-16 link'>ABOUT</button>
-            <button onClick={() => scrollToRef(projectsRef)} className='me-12 link'>PROJECTS</button>
+          <ul className='flex text-gray-200 text-2xl sm:text-xl justify-center sm:justify-start sm:px-14 py-7'>
+            <button onClick={() => scrollToRef(aboutRef)} className=' me-4 sm:me-16 link'>ABOUT</button>
+            <button onClick={() => scrollToRef(projectsRef)} className='me-4 sm:me-12 link'>PROJECTS</button>
             <button onClick={() => scrollToRef(contactRef)} className='link'>CONTACT</button>
           </ul>
         </MovingComponent>
