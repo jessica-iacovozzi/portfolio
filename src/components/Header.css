@@ -1,3 +1,6 @@
 .header-text {
   text-shadow:  2px 2px 1px rgb(0, 0, 0);
+  @media (min-width: 1024px) and (max-height: 820px) {
+    font-size: 100px!important;
+  }
 }
