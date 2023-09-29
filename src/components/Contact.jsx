@@ -68,8 +68,8 @@ export default function Contact({ contactRef }) {
     });
 
   return (
-    <div ref={contactRef} id='contact' className='lg:h-screen'>
-      <div className='mt-28 lg:mt-0 flex flex-col items-center relative bg-gray-950/80 backdrop-blur border-y-1.5 border-pink'>
+    <div ref={contactRef} id='contact' className='lg:h-screen mt-32'>
+      <div className='flex flex-col items-center relative bg-gray-950/80 backdrop-blur border-y-1.5 border-pink'>
         <h2 className='text-gray-400 text-lg mt-12 hidden lg:inline'>CONTACT ME</h2>
         <Toaster />
         <div className='inline lg:flex justify-around my-24 px-8'>

@@ -11,12 +11,11 @@ export default function Projects({ projectsRef }) {
     dots: true,
     speed: 750,
     swipeToSlide: true,
-    fade: true,
     className: "slider"
   };
 
   return (
-    <div ref={projectsRef} id='projects' className='h-screen'>
+    <div ref={projectsRef} id='projects' className='h-screen lg:h-5/6'>
       <div className='flex flex-col items-center relative bg-gray-950/80 backdrop-blur border-y-1.5 border-pink'>
         <h2 className='text-gray-400 text-lg mt-12'>MY WORK</h2>
         <Slider {...settings}>

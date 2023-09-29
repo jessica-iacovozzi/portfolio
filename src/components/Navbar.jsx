@@ -15,7 +15,7 @@ export default function Navbar({ aboutRef, projectsRef, contactRef, aboutAtTop, 
           timing="ease"
           iteration="1"
           fillMode="both">
-          <ul className='flex text-gray-200 text-2xl lg:text-xl justify-center lg:justify-start lg:px-14 py-7'>
+          <ul className='flex text-gray-200 sm:text-2xl lg:text-xl justify-center lg:justify-start lg:px-14 py-7'>
             <button onClick={() => scrollToRef(aboutRef)} className=' me-4 lg:me-16 link'>ABOUT</button>
             <button onClick={() => scrollToRef(projectsRef)} className='me-4 lg:me-12 link'>PROJECTS</button>
             <button onClick={() => scrollToRef(contactRef)} className='link'>CONTACT</button>

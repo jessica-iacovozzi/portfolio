@@ -6,7 +6,7 @@ import Button from './Button.jsx';
 function Header() {
   return (
     <div className='bg-gray-950 lg:h-screen flex flex-col sticky inset-0'>
-     <Grid />
+      <Grid />
       <div className='header-div flex justify-center flex-col flex-1 px-3 lg:px-52 items-center lg:items-start mt-64 lg:mt-0'>
         <MovingComponent
           type="fadeInFromBottom"

@@ -41,3 +41,9 @@
     margin-bottom: 3rem;
   }
 }
+
+#projects {
+  @media (min-width: 1350px) and (min-height: 1024px) {
+    height: 60vh!important;
+  }
+}
