@@ -67,22 +67,22 @@ export default function ContactUs({ contactRef }) {
     });
 
   return (
-    <div ref={contactRef} id='contact' className='sm:h-screen'>
+    <div ref={contactRef} id='contact' className='lg:h-screen'>
       <Toaster />
-      <div className='mt-28 sm:mt-0 flex flex-col items-center relative bg-gray-950/80 backdrop-blur border-y-1.5 border-pink'>
-        <h2 className='text-gray-400 text-lg mt-12 hidden sm:inline'>CONTACT ME</h2>
-        <div className='inline sm:flex justify-around my-24'>
-          <div className='flex-1 text-center sm:text-start'>
-            <h2 className='text-white text-4xl sm:text-5xl mb-5'>Need a website or an application built?</h2>
+      <div className='mt-28 lg:mt-0 flex flex-col items-center relative bg-gray-950/80 backdrop-blur border-y-1.5 border-pink'>
+        <h2 className='text-gray-400 text-lg mt-12 hidden lg:inline'>CONTACT ME</h2>
+        <div className='inline lg:flex justify-around my-24 px-8'>
+          <div className='flex-1 text-center lg:text-start'>
+            <h2 className='text-white text-4xl lg:text-5xl mb-5'>Need a website or an application built?</h2>
             <p className='text-gray-400 text-3xl mb-20'>Let&#39;s bring your idea to life.</p>
-            <div className='group hidden sm:inline'>
+            <div className='group hidden lg:inline'>
               <a className="flex items-center text-pink text-lg group-hover:text-white" href="mailto:iacovozzi.jessica@gmail.com">
                 <TfiEmail className='text-pink me-1 group-hover:text-white' />
                 iacovozzi.jessica@gmail.com
               </a>
             </div>
           </div>
-          <form onSubmit={formik.handleSubmit} className='flex flex-col text-white flex-1 px-5 sm:px-0'>
+          <form onSubmit={formik.handleSubmit} className='flex flex-col text-white flex-1 px-5 lg:px-0'>
               <label className='mb-1'>NAME</label>
             <div className='mb-4'>
               <input type="text" id="from_name" name="from_name" onChange={formik.handleChange} value={formik.values.from_name} className='w-full rounded-md text-2xl text-gray-950 p-2' />

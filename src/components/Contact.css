@@ -5,7 +5,10 @@ input:focus-visible, textarea:focus-visible {
 }
 
 #contact {
-  @media (max-height: 700px) {
+  @media (max-height: 600px) {
+    margin-top: 16rem;
+  }
+  @media (min-height: 601px) and (max-height: 700px) {
     margin-top: 24rem;
   }
   @media (min-height: 700px) and (max-height: 736px) {
@@ -16,5 +19,18 @@ input:focus-visible, textarea:focus-visible {
   }
   @media (min-height: 851px) and (max-height: 900px) {
     margin-top: 12rem;
+  }
+  @media (min-height: 901px) and (max-height: 1024px) {
+    margin-top: 14rem;
+  }
+  @media (min-height: 1025px) and (max-height: 1180px) {
+    margin-top: 0;
+  }
+  @media (max-width: 912px) and (min-height: 1366px) {
+    margin-top: -7rem;
+  }
+  @media (min-width: 1024px) and (min-height: 1366px) {
+    margin-top: -28rem;
+    height: 55vh;
   }
 }
