@@ -1,9 +1,10 @@
 import { projects } from '../projects_data.js';
 import './Projects.css'
-import Project from './Project';
+import Project from './Project.jsx';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import PropTypes from 'prop-types';
 
 export default function Projects({ projectsRef }) {
   var settings = {
@@ -26,4 +27,8 @@ export default function Projects({ projectsRef }) {
       </div>
     </div>
   )
+}
+
+Projects.propTypes = {
+  projectsRef: PropTypes.object
 }

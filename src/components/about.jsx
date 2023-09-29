@@ -1,9 +1,10 @@
 import me from '../assets/me.png';
-import Image from './Image';
+import Image from './Image.jsx';
 import { TypeAnimation } from 'react-type-animation';
 import './About.css';
+import PropTypes from 'prop-types';
 
-function About({ aboutRef }) {
+export default function About({ aboutRef }) {
   return (
     <div ref={aboutRef} id='about' className='lg:h-screen'>
       <div className='about-div lg:h-5/6 flex relative bg-[#ffc0cb] m-5 md:m-10 my-20 lg:my-0 rounded-lg'>
@@ -37,4 +38,6 @@ function About({ aboutRef }) {
   )
 }
 
-export default About;
+About.propTypes = {
+  aboutRef: PropTypes.object,
+};

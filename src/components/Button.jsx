@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function Button({ link, text, target }) {
   return (
     <a href={link} target={target ? "_blank" : ""} rel={target ? "noreferrer" : ""} className="w-fit text-lg relative inline-flex border-2 mt-14 border-white hover:border-gray-950 justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-gray-950 rounded-lg hover:bg-gray-950 group">
@@ -5,4 +7,10 @@ export default function Button({ link, text, target }) {
       <span className="relative w-full text-left text-white transition-colors duration-300 ease-in-out group-hover:text-gray-950">{text}</span>
     </a>
   )
+}
+
+Button.propTypes = {
+  link: PropTypes.string,
+  text: PropTypes.string,
+  target: PropTypes.bool
 }

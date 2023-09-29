@@ -1,7 +1,7 @@
 import './Header.css';
 import MovingComponent from 'react-moving-text';
-import Grid from './Grid';
-import Button from './Button';
+import Grid from './Grid.jsx';
+import Button from './Button.jsx';
 
 function Header() {
   return (

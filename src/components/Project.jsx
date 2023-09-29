@@ -1,10 +1,12 @@
-import Button from './Button';
+import Button from './Button.jsx';
 import { BiCodeAlt } from 'react-icons/bi';
+import PropTypes from 'prop-types';
 
 export default function Project({ project }) {
   return (
     <div className='inline lg:flex items-center lg:h-5/6 pb-10'>
-      <div className="lg:w-1/2 flex-1 flex flex-col items-center lg:items-start p-10 lg:p-28">
+      <div className="lg:w-import PropTypes from 'prop-types';
+1/2 flex-1 flex flex-col items-center lg:items-start p-10 lg:p-28">
         <div className="flex flex-col justify-evenly text-center lg:text-start">
           <h3 className="text-5xl text-white font-bold">{project.name}</h3>
           <p className="text-gray-400 text-xl font-semibold mt-8 lg:me-8" dangerouslySetInnerHTML={{ __html: project.description }}></p>
@@ -22,4 +24,8 @@ export default function Project({ project }) {
       </div>
     </div>
   )
+}
+
+Project.propTypes = {
+  project: PropTypes.object
 }

@@ -3,14 +3,15 @@ import emailjs from '@emailjs/browser';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import './Contact.css';
-import styles from "../App.module.css";
+import styles from "./Contact.module.css";
 import classNames from "classnames";
 import toast, { Toaster } from "react-hot-toast";
 import { TfiEmail} from 'react-icons/tfi';
 import { MdOutlineClose } from "react-icons/md";
 import { SiMinutemailer } from "react-icons/si";
+import PropTypes from 'prop-types';
 
-export default function ContactUs({ contactRef }) {
+export default function Contact({ contactRef }) {
   const [buttonState, setButtonState] = useState('Send Message');
 
   const notify = () =>
@@ -68,9 +69,9 @@ export default function ContactUs({ contactRef }) {
 
   return (
     <div ref={contactRef} id='contact' className='lg:h-screen'>
-      <Toaster />
       <div className='mt-28 lg:mt-0 flex flex-col items-center relative bg-gray-950/80 backdrop-blur border-y-1.5 border-pink'>
         <h2 className='text-gray-400 text-lg mt-12 hidden lg:inline'>CONTACT ME</h2>
+        <Toaster />
         <div className='inline lg:flex justify-around my-24 px-8'>
           <div className='flex-1 text-center lg:text-start'>
             <h2 className='text-white text-4xl lg:text-5xl mb-5'>Need a website or an application built?</h2>
@@ -110,4 +111,8 @@ export default function ContactUs({ contactRef }) {
       </div>
     </div>
   );
+}
+
+Contact.propTypes = {
+  contactRef: PropTypes.object
 }
