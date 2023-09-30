@@ -68,7 +68,7 @@ export default function Contact({ contactRef }) {
     });
 
   return (
-    <div ref={contactRef} id='contact' className='lg:h-screen mt-80'>
+    <div ref={contactRef} id='contact' className='lg:h-screen xl:h-3/4 mt-80 lg:mt-28 xl:mt-60'>
       <div className='flex flex-col items-center relative bg-gray-950/80 backdrop-blur border-y-1.5 border-pink'>
         <h2 className='text-gray-400 text-lg mt-12 hidden lg:inline'>CONTACT ME</h2>
         <Toaster />
