@@ -12,7 +12,7 @@ import LocaleContext from './LocaleContext.jsx';
 
 export default function App() {
   const [locale, setLocale] = useState(i18n.language);
-  const [isAboutAtTop, setIsAboutAtTop] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
   const [scroll, setScroll] = useState();
   const aboutRef = useRef();
   const projectsRef = useRef();
@@ -50,20 +50,20 @@ export default function App() {
   };
 
   const handleScroll = () => {
-    const divElement = document.getElementById('about');
+    const divElement = document.getElementById('root');
 
     if (divElement) {
       const rect = divElement.getBoundingClientRect();
-      const isAtTop = rect.top <= 85;
+      const isAtTop = rect.top == 0;
 
-      setIsAboutAtTop(isAtTop);
+      setIsAtTop(isAtTop);
     }
   };
 
   return (
     <LocaleContext.Provider value={{locale, setLocale}}>
       <Suspense fallback={<Loading />}>
-        <Navbar aboutAtTop={isAboutAtTop} scrollToRef={scrollToRef} aboutRef={aboutRef} projectsRef={projectsRef} contactRef={contactRef} />
+        <Navbar AtTop={isAtTop} scrollToRef={scrollToRef} aboutRef={aboutRef} projectsRef={projectsRef} contactRef={contactRef} />
         <Header />
         <About aboutRef={aboutRef} />
         <Projects projectsRef={projectsRef} />

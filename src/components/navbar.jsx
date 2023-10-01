@@ -2,9 +2,9 @@ import { useTranslation } from "react-i18next";
 import MovingComponent from 'react-moving-text';
 import PropTypes from 'prop-types';
 
-export default function Navbar({ aboutRef, projectsRef, contactRef, aboutAtTop, scrollToRef }) {
+export default function Navbar({ aboutRef, projectsRef, contactRef, AtTop, scrollToRef }) {
   const { t } = useTranslation();
-  const divClassnames = aboutAtTop ? 'backdrop-blur border-b-2.5 border-gray-950 transition-all ease duration-250 bg-gray-950/70' : 'border-b-0.5 transition-all ease border-transparent bg-transparent'
+  const divClassnames = AtTop ? 'border-b-0.5 transition-all ease border-transparent bg-transparent' : 'backdrop-blur border-b-2.5 border-gray-950 transition-all ease duration-250 bg-gray-950/70'
 
   return (
     <header className='w-full fixed top-0 z-40'>
