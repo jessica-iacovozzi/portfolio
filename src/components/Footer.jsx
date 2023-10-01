@@ -17,19 +17,19 @@ export default function Footer() {
 
   return (
     <>
-      <div className='flex justify-around items-center relative bg-gray-950/25 backdrop-blur border-t-1.5 border-pink text-gray-400 mt-20'>
-        <div className='flex items-center'>
+      <div className='flex items-center relative bg-gray-950/25 backdrop-blur border-t-1.5 border-pink text-gray-400 mt-20 py-6'>
+        <div className='flex items-center justify-center ms-0 flex-1'>
           <MdKeyboardArrowLeft className='text-xl mt-0.5 -me-0.5' />
           <p>Jessica Iacovozzi</p>
           <RxSlash />
           <MdKeyboardArrowRight className='-ms-2 text-xl mt-0.5' />
         </div>
-        <div className='flex justify-evenly items-center h-[70px] w-[150px]'>
+        <div className='flex items-center justify-center flex-1'>
           <a href='https://www.linkedin.com/in/jessica-iacovozzi/' target='_blank' rel='noreferrer'><BsLinkedin className='hover:text-pink text-2xl'/></a>
-          <a href='https://github.com/jessica-iacovozzi/' target='_blank' rel='noreferrer'><BsGithub className='hover:text-pink text-2xl'/></a>
+          <a href='https://github.com/jessica-iacovozzi/' target='_blank' rel='noreferrer'><BsGithub className='hover:text-pink text-2xl mx-3'/></a>
           <a href='mailto:iacovozzi.jessica@gmail.com'><TfiEmail className='hover:text-pink text-2xl'/></a>
         </div>
-        <div className='flex'>
+        <div className='flex justify-center flex-1'>
           <button href='#' onClick={() => changeLocale('en')} className={locale === 'en' ? 'font-bold' : ''}>EN</button>
           |
           <button href='#' onClick={() => changeLocale('fr')} className={locale === 'fr' ? 'font-bold' : ''}>FR</button>
