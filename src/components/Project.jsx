@@ -1,8 +1,11 @@
 import { BiCodeAlt } from 'react-icons/bi';
 import Button from './Button.jsx';
 import PropTypes from 'prop-types';
+import { useTranslation } from "react-i18next";
 
 export default function Project({ project }) {
+  const { t } = useTranslation();
+
   return (
     <div className='inline lg:flex items-center lg:h-5/6 pb-10'>
       <div className="lg:w-1/2 flex-1 flex flex-col items-center lg:items-start p-10 lg:p-28">
@@ -11,9 +14,9 @@ export default function Project({ project }) {
           <p className="text-gray-400 text-xl font-semibold mt-8 lg:me-8" dangerouslySetInnerHTML={{ __html: project.description }}></p>
         </div>
         <div className="text-xl flex flex-col items-center w-fit">
-          <Button link={project.appLink} target={true} text="Visit the website" />
+          <Button link={project.appLink} target={true} text={t('visit_website')} />
           <a className="text-white w-fit link mt-3 flex items-center" href={project.codeLink} target="_blank" rel="noreferrer">
-            Source code
+            {t('source_code')}
             <BiCodeAlt className='ms-2 mt-0.5'/>
           </a>
         </div>
