@@ -32,6 +32,6 @@ Navbar.propTypes = {
   aboutRef: PropTypes.object,
   projectsRef: PropTypes.object,
   contactRef: PropTypes.object,
-  aboutAtTop: PropTypes.bool,
+  AtTop: PropTypes.bool,
   scrollToRef: PropTypes.func
 }
