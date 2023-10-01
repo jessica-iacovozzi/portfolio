@@ -17,7 +17,7 @@ export default function Footer() {
 
   return (
     <>
-      <div className='flex justify-around items-center relative bg-gray-950/80 backdrop-blur border-t-1.5 border-pink text-gray-400'>
+      <div className='flex justify-around items-center relative bg-gray-950/25 backdrop-blur border-t-1.5 border-pink text-gray-400 mt-20'>
         <div className='flex items-center'>
           <MdKeyboardArrowLeft className='text-xl mt-0.5 -me-0.5' />
           <p>Jessica Iacovozzi</p>
