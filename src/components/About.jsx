@@ -3,8 +3,11 @@ import Image from './Image.jsx';
 import { TypeAnimation } from 'react-type-animation';
 import './About.css';
 import PropTypes from 'prop-types';
+import { useTranslation } from "react-i18next";
 
 export default function About({ aboutRef }) {
+  const { t } = useTranslation();
+
   return (
     <div ref={aboutRef} id='about' className='lg:h-screen xl:h-1/2 xl:mb-28'>
       <div className='about-div lg:h-fit flex relative bg-[#ffc0cb] m-5 md:m-10 my-20 lg:my-0 rounded-lg'>
@@ -12,19 +15,19 @@ export default function About({ aboutRef }) {
           <Image name={me} />
         </div>
         <div className='flex-1 flex flex-col justify-center text-gray-950 bg-transparent backdrop-blur-md m-10 lg:m-20 text-center lg:text-start'>
-          <h2 className='text-md mb-8'>ABOUT ME</h2>
-          <p className='text-2xl'>I am a full-stack developer from Quebec, Canada, aiming to make positive change in the world.
+          <h2 className='text-md mb-8'>{t('about_me')}</h2>
+          <p className='text-2xl'>{t('me_description')}
           <TypeAnimation
             sequence={[
-              " I develop web applications with React.",
+              "React",
               1000,
-              " I develop web applications with Stimulus.",
+              "Stimulus",
               1000,
-              " I develop web applications with Ruby on Rails.",
+              "Ruby on Rails",
               1000,
-              " I develop web applications with Tailwind CSS.",
+              "Tailwind CSS",
               1000,
-              " I develop web applications with Bootstrap.",
+              "Bootstrap",
               1000
             ]}
             className='text-2xl'
@@ -40,4 +43,5 @@ export default function About({ aboutRef }) {
 
 About.propTypes = {
   aboutRef: PropTypes.object,
+  locale: PropTypes.string
 };

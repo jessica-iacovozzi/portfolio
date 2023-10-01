@@ -19,10 +19,10 @@ export default function Footer() {
     <>
       <div className='flex justify-around items-center relative bg-gray-950/80 backdrop-blur border-t-1.5 border-pink text-gray-400'>
         <div className='flex items-center'>
-          <MdKeyboardArrowLeft />
+          <MdKeyboardArrowLeft className='text-xl mt-0.5 -me-0.5' />
           <p>Jessica Iacovozzi</p>
           <RxSlash />
-          <MdKeyboardArrowRight />
+          <MdKeyboardArrowRight className='-ms-2 text-xl mt-0.5' />
         </div>
         <div className='flex justify-evenly items-center h-[70px] w-[150px]'>
           <a href='https://www.linkedin.com/in/jessica-iacovozzi/' target='_blank' rel='noreferrer'><BsLinkedin className='hover:text-pink text-2xl'/></a>

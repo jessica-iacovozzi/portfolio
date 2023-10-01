@@ -1,5 +1,21 @@
 {
   "about": "À PROPOS",
   "projects": "PROJETS",
-  "contact": "CONTACT"
+  "contact": "CONTACT",
+  "about_me": "À PROPOS DE MOI",
+  "me_description": "Je suis une développeuse québécoise qui souhaite avoir un impact positif sur le monde. Je développe des applications web avec ",
+  "hi": "Hey! Je m'appelle",
+  "header_btn": "Voici mes projets",
+  "form_notif": "Message envoyé!",
+  "required_name": "Votre nom est requis",
+  "required_email": "Votre courriel est requis",
+  "required_message": "Votre message est requis",
+  "invalid_email": "Courriel invalide",
+  "send_message": "Envoyer",
+  "contact_me": "CONTACTEZ-MOI",
+  "contact_title": "Vous avez besoin d'un site web ou d'une application?",
+  "contact_subtitle": "Donnons vie à votre idée!",
+  "name": "NOM",
+  "email": "COURRIEL",
+  "message": "MESSAGE"
 }

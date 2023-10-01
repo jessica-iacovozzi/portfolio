@@ -20,7 +20,7 @@ export default function App() {
   const marginTop = 85;
 
   useEffect(() => {
-    i18n.on('languageChanged', (lng) => setLocale(i18n.language));
+    i18n.on('languageChanged', () => setLocale(i18n.language));
 
     window.addEventListener('scroll', handleScroll);
 

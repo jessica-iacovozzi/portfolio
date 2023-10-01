@@ -1,5 +1,21 @@
 {
   "about": "ABOUT",
   "projects": "PROJECTS",
-  "contact": "CONTACT"
+  "contact": "CONTACT",
+  "about_me": "ABOUT ME",
+  "me_description": "I am a full-stack developer from Quebec, Canada, aiming to make positive change in the world. I develop web applications with ",
+  "hi": "Hi, my name is",
+  "header_btn": "Check out my work",
+  "form_notif": "Message sent successfully!",
+  "required_name": "Your name is required",
+  "required_email": "Your email is required",
+  "required_message": "Your message is required",
+  "invalid_email": "Invalid email address",
+  "send_message": "Send Message",
+  "contact_me": "CONTACT ME",
+  "contact_title": "Need a website or an application built?",
+  "contact_subtitle": "Let&#39;s bring your idea to life.",
+  "name": "NAME",
+  "email": "EMAIL",
+  "message": "MESSAGE"
 }
