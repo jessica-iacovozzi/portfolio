@@ -4,7 +4,7 @@ import Grid from './Grid.jsx';
 import Button from './Button.jsx';
 import { useTranslation } from "react-i18next";
 
-function Header() {
+export default function Header() {
   const { t } = useTranslation();
 
   return (
@@ -47,5 +47,3 @@ function Header() {
     </div>
   )
 }
-
-export default Header;

@@ -18,7 +18,7 @@ export default function Footer() {
   return (
     <>
       <div className='flex items-center relative bg-gray-950/25 backdrop-blur border-t-1.5 border-pink text-gray-400 mt-20 py-6'>
-        <div className='flex items-center justify-center ms-0 flex-1'>
+        <div className='items-center justify-center ms-0 flex-1 hidden sm:flex'>
           <MdKeyboardArrowLeft className='text-xl mt-0.5 -me-0.5' />
           <p>Jessica Iacovozzi</p>
           <RxSlash />
