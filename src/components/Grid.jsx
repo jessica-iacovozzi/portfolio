@@ -8,7 +8,7 @@ function Grid() {
       const delay = 0.25 + i * 0.25;
       return {
         pathLength: 1,
-        opacity: 1,
+        opacity: 0.3,
         transition: {
           pathLength: { delay, type: "spring", duration: 1.5, bounce: 0 },
           opacity: { delay, duration: 0.01 }

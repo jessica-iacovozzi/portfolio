@@ -4,3 +4,7 @@
     font-size: 100px!important;
   }
 }
+
+.header-text:first-of-type {
+  padding-bottom: 2.5rem!important;
+}
