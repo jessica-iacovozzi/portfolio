@@ -77,7 +77,7 @@ export default function Contact({ contactRef }) {
         <div className='inline lg:flex justify-around my-24 px-8'>
           <div className='flex-1 text-center lg:text-start'>
             <h2 className='text-white text-4xl lg:text-5xl mb-5'>{t('contact_title')}</h2>
-            <p className='text-gray-400 text-2xl mb-20'>{t('contact_subtitle')}</p>
+            <p className='text-gray-400 text-2xl mb-12'>{t('contact_subtitle')}</p>
             <div className='group hidden lg:inline'>
               <a className="flex items-center text-pink text-lg group-hover:text-white" href="mailto:iacovozzi.jessica@gmail.com">
                 <TfiEmail className='text-pink me-1 group-hover:text-white' />
@@ -107,7 +107,10 @@ export default function Contact({ contactRef }) {
                   {formik.errors.message}
               </div>
             </div>
-            <button type="submit" disabled={formik.isSubmitting} className="hover:text-pink mt-2 text-lg relative inline-flex border-2 border-white hover:border-pink justify-center px-4 py-2 overflow-hidden font-medium transition-all bg-gray-950 rounded-lg hover:bg-gray-950 group">{buttonState}</button>
+            <button type="submit" disabled={formik.isSubmitting} className="w-fit mx-auto text-lg relative inline-flex border-2 mt-2 border-white hover:border-gray-950 px-6 py-3 overflow-hidden font-medium transition-all bg-gray-950 rounded-lg hover:bg-gray-950 group">
+              <span className="w-48 h-48 rounded rotate-[-40deg] bg-white absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+              <span className="relative w-full text-left text-white transition-colors duration-300 ease-in-out group-hover:text-gray-950">{buttonState}</span>
+            </button>
           </form>
         </div>
       </div>
