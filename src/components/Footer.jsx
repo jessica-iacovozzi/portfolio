@@ -1,5 +1,6 @@
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
 import { TfiEmail } from 'react-icons/tfi';
+import { SiBuymeacoffee } from 'react-icons/si';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { useContext } from 'react';
 import LocaleContext from '../LocaleContext';
@@ -22,10 +23,11 @@ export default function Footer() {
           <p>Jessica Iacovozzi</p>
           <MdKeyboardArrowRight className='text-xl mt-0.5' />
         </div>
-        <div className='flex items-center justify-center flex-1'>
+        <div className='flex items-center justify-center flex-1 gap-3'>
           <a href='https://www.linkedin.com/in/jessica-iacovozzi/' target='_blank' rel='noreferrer'><BsLinkedin className='hover:text-pink text-2xl'/></a>
-          <a href='https://github.com/jessica-iacovozzi/' target='_blank' rel='noreferrer'><BsGithub className='hover:text-pink text-2xl mx-3'/></a>
+          <a href='https://github.com/jessica-iacovozzi/' target='_blank' rel='noreferrer'><BsGithub className='hover:text-pink text-2xl'/></a>
           <a href='mailto:iacovozzi.jessica@gmail.com'><TfiEmail className='hover:text-pink text-2xl'/></a>
+          <a href='https://www.buymeacoffee.com/jiacovozzi'><SiBuymeacoffee className='hover:text-pink text-2xl'/></a>
         </div>
         <div className='flex justify-center flex-1 gap-1'>
           <button href='#' onClick={() => changeLocale('en')} className={locale === 'en' ? 'font-bold' : ''}>EN</button>
