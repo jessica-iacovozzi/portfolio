@@ -21,7 +21,7 @@ export default function Project({ project }) {
           </a>
         </div>
       </div>
-      <div className='flex-1 flex lg:h-3/4'>
+      <div className='flex-1 flex lg:h-3/4 me-20'>
         <img src={project.image} alt="mockup" className='project-img' />
       </div>
     </div>
