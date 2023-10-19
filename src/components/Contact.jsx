@@ -77,7 +77,7 @@ export default function Contact({ contactRef }) {
         <div className='inline lg:flex justify-around my-24 px-8'>
           <div className='flex-1 text-center lg:text-start'>
             <h2 className='text-white text-4xl lg:text-5xl mb-5'>{t('contact_title')}</h2>
-            <p className='text-gray-400 text-3xl mb-20'>{t('contact_subtitle')}</p>
+            <p className='text-gray-400 text-2xl mb-20'>{t('contact_subtitle')}</p>
             <div className='group hidden lg:inline'>
               <a className="flex items-center text-pink text-lg group-hover:text-white" href="mailto:iacovozzi.jessica@gmail.com">
                 <TfiEmail className='text-pink me-1 group-hover:text-white' />

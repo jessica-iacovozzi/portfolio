@@ -14,9 +14,9 @@ export default function About({ aboutRef }) {
         <div className='rounded-s-lg overflow-hidden flex-1 justify-center items-center hidden lg:flex'>
           <Image name={me} />
         </div>
-        <div className='flex-1 flex flex-col justify-center text-gray-950 bg-transparent backdrop-blur-md m-10 lg:m-20 text-center lg:text-start'>
-          <h2 className='text-md mb-8'>{t('about_me')}</h2>
-          <p className='text-2xl'>{t('me_description')}
+        <div className='flex-1 flex flex-col justify-center text-gray-800 bg-transparent backdrop-blur-md m-10 lg:m-20 text-center lg:text-start'>
+          <h2 className='text-lg mb-8'>{t('about_me')}</h2>
+          <p className='text-xl'>{t('me_description')}
           <TypeAnimation
             sequence={[
               "React.",
@@ -30,7 +30,7 @@ export default function About({ aboutRef }) {
               "Bootstrap.",
               1000
             ]}
-            className='text-2xl'
+            className='text-xl'
             speed={50}
             repeat={Infinity}
           />

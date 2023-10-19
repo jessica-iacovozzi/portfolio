@@ -1,4 +1,4 @@
-import { BiCodeAlt } from 'react-icons/bi';
+import { FiExternalLink } from 'react-icons/fi';
 import Button from './Button.jsx';
 import PropTypes from 'prop-types';
 import { useTranslation } from "react-i18next";
@@ -15,10 +15,10 @@ export default function Project({ project }) {
         </div>
         <div className="text-xl flex flex-col items-center w-fit">
           <Button link={project.appLink} target={true} text={t('visit_website')} />
-          <a className="text-white w-fit link mt-3 flex items-center" href={project.codeLink} target="_blank" rel="noreferrer">
+          {/* <a className="text-white w-fit link mt-8 flex items-center" href={project.codeLink} target="_blank" rel="noreferrer">
             {t('source_code')}
-            <BiCodeAlt className='ms-2 mt-0.5'/>
-          </a>
+            <FiExternalLink className='ms-2'/>
+          </a> */}
         </div>
       </div>
       <div className='flex-1 flex lg:h-3/4 me-20'>
