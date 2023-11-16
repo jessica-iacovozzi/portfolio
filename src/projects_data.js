@@ -6,8 +6,8 @@ import i18n from './i18n';
 
 const projects = [
   {
-    name: "RMR Association",
-    appLink: "https://rocky-headland-52098-e854db2d9828.herokuapp.com/",
+    name: "Rosetta's Angels",
+    appLink: "https://rosettasangels.org/",
     codeLink: "https://github.com/jessica-iacovozzi/rmr-rails",
     image: Rmr
   },
