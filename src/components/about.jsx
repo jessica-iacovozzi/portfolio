@@ -19,15 +19,13 @@ export default function About({ aboutRef }) {
           <p className='text-xl'>{t('me_description')}
           <TypeAnimation
             sequence={[
-              "React.",
-              1000,
-              "Stimulus.",
-              1000,
               "Ruby on Rails.",
               1000,
-              "Tailwind CSS.",
+              "React.",
               1000,
-              "Bootstrap.",
+              "Next.js.",
+              1000,
+              "Tailwind.",
               1000
             ]}
             className='text-xl'

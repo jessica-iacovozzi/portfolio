@@ -3,6 +3,25 @@
   padding-bottom: 3rem;
 }
 
+.slick-prev, .slick-next {
+  z-index: 100;
+  @media (min-width: 500px) {
+    top: 35%!important;
+  }
+}
+
+.slick-prev:before {
+  position: relative;
+  left: 4rem;
+  font-size: 2rem!important;
+}
+
+.slick-next:before {
+  position: relative;
+  right: 4rem;
+  font-size: 2rem!important;
+}
+
 .slick-dots li.slick-active button:before {
   color: white!important;
 }
