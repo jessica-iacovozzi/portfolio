@@ -19,13 +19,13 @@ const projects = [
     image: DogBreedHub
   },
   {
-    name: "Issue Tracker",
+    name: "Project Issue Tracker",
     appLink: "https://issue-tracker-alpha-eight.vercel.app/",
     codeLink: "https://github.com/jessica-iacovozzi/issue-tracker",
     image: IssueTracker
   },
   {
-    name: "ShortURL",
+    name: "URL Shortener",
     appLink: "https://shorturl.ltd/",
     codeLink: "https://github.com/jessica-iacovozzi/url_shortener",
     image: ShortURL
