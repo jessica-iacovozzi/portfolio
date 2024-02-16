@@ -13,12 +13,6 @@ const projects = [
     image: Rmr
   },
   {
-    name: "Charity Finder",
-    appLink: "https://charity-finder.ca/",
-    codeLink: "https://github.com/jessica-iacovozzi/Canadian-Charities",
-    image: CharityFinder
-  },
-  {
     name: "Dog Breed Hub",
     appLink: "https://dog-breed-hub.vercel.app/",
     codeLink: "https://github.com/jessica-iacovozzi/dog-breed-hub",
@@ -35,15 +29,21 @@ const projects = [
     appLink: "https://shorturl.ltd/",
     codeLink: "https://github.com/jessica-iacovozzi/url_shortener",
     image: ShortURL
+  },
+  {
+    name: "Charity Finder",
+    appLink: "https://charity-finder.ca/",
+    codeLink: "https://github.com/jessica-iacovozzi/Canadian-Charities",
+    image: CharityFinder
   }
 ];
 
 function fill() {
   projects[0].description = i18n.t('rmr_description'),
-  projects[1].description = i18n.t('cf_description'),
-  projects[2].description = i18n.t('dbh_description'),
-  projects[3].description = i18n.t('it_description'),
-  projects[4].description = i18n.t('surl_description')
+  projects[1].description = i18n.t('dbh_description'),
+  projects[2].description = i18n.t('it_description'),
+  projects[3].description = i18n.t('surl_description'),
+  projects[4].description = i18n.t('cf_description')
 }
 
 fill();

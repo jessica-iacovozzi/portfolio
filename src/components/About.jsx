@@ -1,6 +1,6 @@
 import me from '../assets/me.png';
 import Image from './Image.jsx';
-import { TypeAnimation } from 'react-type-animation';
+// import { TypeAnimation } from 'react-type-animation';
 import './About.css';
 import PropTypes from 'prop-types';
 import { useTranslation } from "react-i18next";
@@ -17,7 +17,7 @@ export default function About({ aboutRef }) {
         <div className='flex-1 flex flex-col justify-center text-gray-800 bg-transparent backdrop-blur-md m-10 lg:m-20 text-center lg:text-start'>
           <h2 className='text-lg mb-8'>{t('about_me')}</h2>
           <p className='text-xl'>{t('me_description')}
-          <TypeAnimation
+          {/* <TypeAnimation
             sequence={[
               "Ruby on Rails.",
               1000,
@@ -28,10 +28,9 @@ export default function About({ aboutRef }) {
               "Tailwind.",
               1000
             ]}
-            className='text-xl'
             speed={50}
             repeat={Infinity}
-          />
+          /> */}
           </p>
         </div>
       </div>
