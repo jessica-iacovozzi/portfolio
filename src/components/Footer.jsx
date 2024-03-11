@@ -24,10 +24,22 @@ export default function Footer() {
           <MdKeyboardArrowRight className='text-xl mt-0.5' />
         </div>
         <div className='flex items-center justify-center flex-1 gap-3'>
-          <a href='https://www.linkedin.com/in/jessica-iacovozzi/' target='_blank' rel='noreferrer'><BsLinkedin className='hover:text-pink text-2xl'/></a>
-          <a href='https://github.com/jessica-iacovozzi/' target='_blank' rel='noreferrer'><BsGithub className='hover:text-pink text-2xl'/></a>
-          <a href='mailto:iacovozzi.jessica@gmail.com'><TfiEmail className='hover:text-pink text-2xl'/></a>
-          <a href='https://www.buymeacoffee.com/jiacovozzi'><SiBuymeacoffee className='hover:text-pink text-2xl'/></a>
+          <a href='https://www.linkedin.com/in/jessica-iacovozzi/' target='_blank' rel='noreferrer'>
+            <BsLinkedin className='hover:text-pink text-2xl'/>
+            <span className="sr-only">LinkedIn</span>
+          </a>
+          <a href='https://github.com/jessica-iacovozzi/' target='_blank' rel='noreferrer'>
+            <BsGithub className='hover:text-pink text-2xl'/>
+            <span className="sr-only">GitHub</span>
+          </a>
+          <a href='mailto:iacovozzi.jessica@gmail.com'>
+            <TfiEmail className='hover:text-pink text-2xl'/>
+            <span className="sr-only">Send me an email</span>
+          </a>
+          <a href='https://www.buymeacoffee.com/jiacovozzi'>
+            <SiBuymeacoffee className='hover:text-pink text-2xl'/>
+            <span className="sr-only">Buy me a coffee</span>
+          </a>
         </div>
         <div className='flex justify-center flex-1 gap-1'>
           <button href='#' onClick={() => changeLocale('en')} className={locale === 'en' ? 'font-bold' : ''}>EN</button>
