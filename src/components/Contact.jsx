@@ -86,21 +86,21 @@ export default function Contact({ contactRef }) {
             </div>
           </div>
           <form onSubmit={formik.handleSubmit} className='flex flex-col text-white flex-1 px-5 lg:px-0'>
-              <label className='mb-1'>{t('name')}</label>
+              <label className='mb-1' htmlFor="from_name">{t('name')}</label>
             <div className='mb-4'>
               <input type="text" id="from_name" name="from_name" onChange={formik.handleChange} value={formik.values.from_name} className='w-full rounded-md text-2xl text-gray-950 p-2' />
               <div className={`expandable text-red-700 ${formik.touched.from_name && formik.errors.from_name ? 'show' : ''}`}>
                   {formik.errors.from_name}
               </div>
             </div>
-              <label className='my-1'>{t('email')}</label>
+              <label className='my-1' htmlFor="reply_to">{t('email')}</label>
             <div className='mb-4'>
               <input type="email" id="reply_to" name="reply_to" onChange={formik.handleChange} value={formik.values.reply_to} className='w-full rounded-md text-2xl text-gray-950 p-2' />
               <div className={`expandable text-red-700 ${formik.touched.reply_to && formik.errors.reply_to ? 'show' : ''}`}>
                 {formik.errors.reply_to}
               </div>
             </div>
-              <label className='my-1'>{t('message')}</label>
+              <label className='my-1' htmlFor="message">{t('message')}</label>
             <div className='mb-4'>
               <textarea id="message" name="message" onChange={formik.handleChange} value={formik.values.message} className='w-full rounded-md text-2xl text-gray-950 p-2' />
               <div className={`expandable text-red-700 ${formik.touched.message && formik.errors.message ? 'show' : ''}`}>
