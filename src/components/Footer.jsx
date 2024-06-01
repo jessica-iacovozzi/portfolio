@@ -1,7 +1,6 @@
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
 import { TfiEmail } from 'react-icons/tfi';
 import { SiBuymeacoffee } from 'react-icons/si';
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { useContext } from 'react';
 import LocaleContext from '../LocaleContext';
 import i18n from '../i18n';
@@ -19,9 +18,7 @@ export default function Footer() {
     <>
       <div className='flex items-center relative bg-gray-950/25 backdrop-blur border-t-1.5 border-pink text-gray-400 mt-20 py-6'>
         <div className='items-center justify-center ms-0 flex-1 hidden sm:flex gap-1'>
-          <MdKeyboardArrowLeft className='text-xl mt-0.5' />
           <p>Jessica Iacovozzi</p>
-          <MdKeyboardArrowRight className='text-xl mt-0.5' />
         </div>
         <div className='flex items-center justify-center flex-1 gap-3'>
           <a href='https://www.linkedin.com/in/jessica-iacovozzi/' target='_blank' rel='noreferrer'>
