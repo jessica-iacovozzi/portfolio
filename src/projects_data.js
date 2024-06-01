@@ -31,8 +31,8 @@ const projects = [
     image: ShortURL
   },
   {
-    name: "Charity Finder",
-    appLink: "https://charity-finder.ca/",
+    name: "Charity Finder v1",
+    appLink: "https://charityfinder.netlify.app/",
     codeLink: "https://github.com/jessica-iacovozzi/Canadian-Charities",
     image: CharityFinder
   }
