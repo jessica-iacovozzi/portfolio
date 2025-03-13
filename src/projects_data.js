@@ -4,9 +4,16 @@ import DogBreedHub from './assets/db_hub.png';
 import ShortURL from './assets/shorturl.png';
 import IssueTracker from './assets/issuetracker.png';
 import RosettasAngels from './assets/rosettas_angels.png';
+import CatCostEstimator from './assets/cat_cost_estimator.png';
 import i18n from './i18n';
 
 const projects = [
+  {
+    name: "Cat Cost Estimator",
+    appLink: "https://cat-cost-estimator.vercel.app/",
+    codeLink: "https://github.com/jessica-iacovozzi/next-cat-cost-estimator",
+    image: CatCostEstimator
+  },
   {
     name: "Rosetta's Angels v2",
     appLink: "https://rosettas-angels.vercel.app/",
@@ -46,12 +53,13 @@ const projects = [
 ];
 
 function fill() {
-  projects[0].description = i18n.t('ra_description'),
-  projects[1].description = i18n.t('rmr_description'),
-  projects[2].description = i18n.t('dbh_description'),
-  projects[5].description = i18n.t('cf_description'),
-  projects[3].description = i18n.t('it_description'),
-  projects[4].description = i18n.t('surl_description')
+  projects[0].description = i18n.t('cce_description'),
+  projects[1].description = i18n.t('ra_description'),
+  projects[2].description = i18n.t('rmr_description'),
+  projects[3].description = i18n.t('dbh_description'),
+  projects[4].description = i18n.t('it_description'),
+  projects[5].description = i18n.t('surl_description'),
+  projects[6].description = i18n.t('cf_description')
 }
 
 fill();
