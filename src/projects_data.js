@@ -1,7 +1,6 @@
 import CharityFinder from './assets/charity_finder.png';
 import Rmr from './assets/rmr.png';
 import DogBreedHub from './assets/db_hub.png';
-import ShortURL from './assets/shorturl.png';
 import IssueTracker from './assets/issuetracker.png';
 import RosettasAngels from './assets/rosettas_angels.png';
 import CatCostEstimator from './assets/cat_cost_estimator.png';
@@ -43,13 +42,7 @@ const projects = [
     appLink: "https://issue-tracker-alpha-eight.vercel.app/",
     codeLink: "https://github.com/jessica-iacovozzi/issue-tracker",
     image: IssueTracker
-  },
-  {
-    name: "URL Shortener",
-    appLink: "https://shorturl.ltd/",
-    codeLink: "https://github.com/jessica-iacovozzi/url_shortener",
-    image: ShortURL
-  },
+  }
 ];
 
 function fill() {
@@ -57,9 +50,8 @@ function fill() {
   projects[1].description = i18n.t('ra_description'),
   projects[2].description = i18n.t('rmr_description'),
   projects[3].description = i18n.t('dbh_description'),
-  projects[4].description = i18n.t('it_description'),
-  projects[5].description = i18n.t('surl_description'),
-  projects[6].description = i18n.t('cf_description')
+  projects[4].description = i18n.t('cf_description'),
+  projects[5].description = i18n.t('it_description')
 }
 
 fill();
