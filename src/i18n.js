@@ -10,7 +10,13 @@ i18n
   .init({
     fallbackLng: 'en',
     debug: true,
-
+    // Ensure translations are loaded synchronously
+    load: 'all',
+    // Add namespaces
+    ns: ['translation'],
+    defaultNS: 'translation',
+    // Wait for translations to be loaded
+    wait: true,
     interpolation: {
       escapeValue: false
     }
