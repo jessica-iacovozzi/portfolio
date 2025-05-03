@@ -21,27 +21,27 @@ export default function Footer() {
           <p>Jessica Iacovozzi</p>
         </div>
         <div className='flex items-center justify-center flex-1 gap-3'>
-          <a href='https://www.linkedin.com/in/jessica-iacovozzi/' target='_blank' rel='noreferrer'>
+          <a href='https://www.linkedin.com/in/jessica-iacovozzi/' target='_blank' rel='noreferrer' aria-label='Visit my LinkedIn profile'>
             <BsLinkedin className='hover:text-pink text-2xl'/>
-            <span className="sr-only">LinkedIn</span>
+            <span className="sr-only">Visit my LinkedIn profile</span>
           </a>
-          <a href='https://github.com/jessica-iacovozzi/' target='_blank' rel='noreferrer'>
+          <a href='https://github.com/jessica-iacovozzi/' target='_blank' rel='noreferrer' aria-label='Check out my GitHub repositories'>
             <BsGithub className='hover:text-pink text-2xl'/>
-            <span className="sr-only">GitHub</span>
+            <span className="sr-only">Check out my GitHub repositories</span>
           </a>
-          <a href='mailto:iacovozzi.jessica@gmail.com'>
+          <a href='mailto:iacovozzi.jessica@gmail.com' aria-label='Send me an email at iacovozzi.jessica@gmail.com'>
             <TfiEmail className='hover:text-pink text-2xl'/>
-            <span className="sr-only">Send me an email</span>
+            <span className="sr-only">Send me an email at iacovozzi.jessica@gmail.com</span>
           </a>
-          <a href='https://www.buymeacoffee.com/jiacovozzi'>
+          <a href='https://www.buymeacoffee.com/jiacovozzi' target='_blank' rel='noreferrer' aria-label='Support me by buying me a coffee'>
             <SiBuymeacoffee className='hover:text-pink text-2xl'/>
-            <span className="sr-only">Buy me a coffee</span>
+            <span className="sr-only">Support me by buying me a coffee</span>
           </a>
         </div>
         <div className='flex justify-center flex-1 gap-1'>
-          <button href='#' onClick={() => changeLocale('en')} className={locale === 'en' ? 'font-bold' : ''}>EN</button>
+          <button onClick={() => changeLocale('en')} className={locale === 'en' ? 'font-bold' : ''} aria-label='Switch language to English' aria-pressed={locale === 'en'}>EN</button>
           |
-          <button href='#' onClick={() => changeLocale('fr')} className={locale === 'fr' ? 'font-bold' : ''}>FR</button>
+          <button onClick={() => changeLocale('fr')} className={locale === 'fr' ? 'font-bold' : ''} aria-label='Switch language to French' aria-pressed={locale === 'fr'}>FR</button>
         </div>
       </div>
     </>
