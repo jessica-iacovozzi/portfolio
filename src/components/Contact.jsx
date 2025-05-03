@@ -24,16 +24,24 @@ export default function Contact({ contactRef }) {
             styles.notificationWrapper,
             tt.visible ? "top-0" : "-top-96",
           ])}
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
         >
-          <div className={styles.iconWrapper}>
+          <div className={styles.iconWrapper} aria-hidden="true">
             <SiMinutemailer />
           </div>
           <div className={styles.contentWrapper}>
             <h1>{t('form_notif')}</h1>
           </div>
-          <div className={styles.closeIcon} onClick={() => toast.dismiss(tt.id)}>
-            <MdOutlineClose />
-          </div>
+          <button 
+            className={styles.closeIcon} 
+            onClick={() => toast.dismiss(tt.id)}
+            aria-label={t('close_notification')}
+            type="button"
+          >
+            <MdOutlineClose aria-hidden="true" />
+          </button>
         </div>
       ),
       { id: "unique-notification", position: "top-right" }
@@ -79,35 +87,98 @@ export default function Contact({ contactRef }) {
             <h2 className='text-white text-4xl lg:text-5xl mb-5'>{t('contact_title')}</h2>
             <p className='text-gray-400 text-2xl mb-12'>{t('contact_subtitle')}</p>
             <div className='group hidden lg:inline'>
-              <a className="flex items-center text-pink text-lg group-hover:text-white" href="mailto:iacovozzi.jessica@gmail.com">
-                <TfiEmail className='text-pink me-1 group-hover:text-white' />
+              <a 
+                className="flex items-center text-pink text-lg group-hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400" 
+                href="mailto:iacovozzi.jessica@gmail.com"
+                aria-label="Email me at iacovozzi.jessica@gmail.com"
+              >
+                <TfiEmail className='text-pink me-1 group-hover:text-white' aria-hidden="true" />
                 iacovozzi.jessica@gmail.com
               </a>
             </div>
           </div>
-          <form onSubmit={formik.handleSubmit} className='flex flex-col text-white flex-1 px-5 lg:px-0'>
-              <label className='mb-1' htmlFor="from_name">{t('name')}</label>
+          <form onSubmit={formik.handleSubmit} className='flex flex-col text-white flex-1 px-5 lg:px-0' aria-label={t('contact_form')} noValidate>
             <div className='mb-4'>
-              <input type="text" id="from_name" name="from_name" onChange={formik.handleChange} value={formik.values.from_name} className='w-full rounded-md text-2xl text-gray-950 p-2' />
-              <div className={`expandable text-red-700 ${formik.touched.from_name && formik.errors.from_name ? 'show' : ''}`}>
-                  {formik.errors.from_name}
+              <label className='mb-1 font-medium' htmlFor="from_name">
+                {t('name')}
+                <span className="text-red-500 ml-1" aria-hidden="true">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="from_name" 
+                name="from_name" 
+                onChange={formik.handleChange} 
+                onBlur={formik.handleBlur}
+                value={formik.values.from_name} 
+                className='w-full rounded-md text-2xl text-gray-950 p-2 focus:outline-none focus:ring-2 focus:ring-blue-400' 
+                aria-required="true" 
+                aria-invalid={formik.touched.from_name && formik.errors.from_name ? "true" : "false"}
+                aria-describedby={formik.touched.from_name && formik.errors.from_name ? "from_name-error" : undefined}
+              />
+              <div 
+                id="from_name-error"
+                className={`expandable text-red-700 ${formik.touched.from_name && formik.errors.from_name ? 'show' : ''}`}
+                aria-live="polite"
+              >
+                {formik.errors.from_name}
               </div>
             </div>
-              <label className='my-1' htmlFor="reply_to">{t('email')}</label>
             <div className='mb-4'>
-              <input type="email" id="reply_to" name="reply_to" onChange={formik.handleChange} value={formik.values.reply_to} className='w-full rounded-md text-2xl text-gray-950 p-2' />
-              <div className={`expandable text-red-700 ${formik.touched.reply_to && formik.errors.reply_to ? 'show' : ''}`}>
+              <label className='my-1 font-medium' htmlFor="reply_to">
+                {t('email')}
+                <span className="text-red-500 ml-1" aria-hidden="true">*</span>
+              </label>
+              <input 
+                type="email" 
+                id="reply_to" 
+                name="reply_to" 
+                onChange={formik.handleChange} 
+                onBlur={formik.handleBlur}
+                value={formik.values.reply_to} 
+                className='w-full rounded-md text-2xl text-gray-950 p-2 focus:outline-none focus:ring-2 focus:ring-blue-400' 
+                aria-required="true" 
+                aria-invalid={formik.touched.reply_to && formik.errors.reply_to ? "true" : "false"}
+                aria-describedby={formik.touched.reply_to && formik.errors.reply_to ? "reply_to-error" : undefined}
+              />
+              <div 
+                id="reply_to-error"
+                className={`expandable text-red-700 ${formik.touched.reply_to && formik.errors.reply_to ? 'show' : ''}`}
+                aria-live="polite"
+              >
                 {formik.errors.reply_to}
               </div>
             </div>
-              <label className='my-1' htmlFor="message">{t('message')}</label>
             <div className='mb-4'>
-              <textarea id="message" name="message" onChange={formik.handleChange} value={formik.values.message} className='w-full rounded-md text-2xl text-gray-950 p-2' />
-              <div className={`expandable text-red-700 ${formik.touched.message && formik.errors.message ? 'show' : ''}`}>
-                  {formik.errors.message}
+              <label className='my-1 font-medium' htmlFor="message">
+                {t('message')}
+                <span className="text-red-500 ml-1" aria-hidden="true">*</span>
+              </label>
+              <textarea 
+                id="message" 
+                name="message" 
+                onChange={formik.handleChange} 
+                onBlur={formik.handleBlur}
+                value={formik.values.message} 
+                className='w-full rounded-md text-2xl text-gray-950 p-2 focus:outline-none focus:ring-2 focus:ring-blue-400' 
+                aria-required="true" 
+                aria-invalid={formik.touched.message && formik.errors.message ? "true" : "false"}
+                aria-describedby={formik.touched.message && formik.errors.message ? "message-error" : undefined}
+                rows="4"
+              />
+              <div 
+                id="message-error"
+                className={`expandable text-red-700 ${formik.touched.message && formik.errors.message ? 'show' : ''}`}
+                aria-live="polite"
+              >
+                {formik.errors.message}
               </div>
             </div>
-            <button type="submit" disabled={formik.isSubmitting} className="w-fit mx-auto text-lg relative inline-flex border-2 mt-2 border-white hover:border-gray-950 px-6 py-3 overflow-hidden font-medium transition-all bg-gray-950 rounded-lg hover:bg-gray-950 group">
+            <button 
+              type="submit" 
+              disabled={formik.isSubmitting} 
+              className="w-fit mx-auto text-lg relative inline-flex border-2 mt-2 border-white hover:border-gray-950 px-6 py-3 overflow-hidden font-medium transition-all bg-gray-950 rounded-lg hover:bg-gray-950 group focus:outline-none focus:ring-2 focus:ring-blue-400"
+              aria-label={formik.isSubmitting ? t('sending_message') : t('send_message')}
+            >
               <span className="w-48 h-48 rounded rotate-[-40deg] bg-white absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
               <span className="relative w-full text-left text-white transition-colors duration-300 ease-in-out group-hover:text-gray-950">{buttonState}</span>
             </button>
