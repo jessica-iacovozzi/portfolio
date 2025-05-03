@@ -32,7 +32,7 @@ export default function Contact({ contactRef }) {
             <SiMinutemailer />
           </div>
           <div className={styles.contentWrapper}>
-            <h1>{t('form_notif')}</h1>
+            <h2 className="text-xl font-bold">{t('form_notif')}</h2>
           </div>
           <button 
             className={styles.closeIcon} 
@@ -80,7 +80,7 @@ export default function Contact({ contactRef }) {
   return (
     <div ref={contactRef} id='contact' className='lg:h-screen xl:h-3/4 mt-80 lg:mt-28 xl:mt-60'>
       <div className='flex flex-col items-center relative xl:px-20 bg-gray-950/25 backdrop-blur border-y-1.5 border-pink'>
-        <h2 className='text-gray-400 text-lg mt-12 hidden lg:inline'>{t('contact_me')}</h2>
+        <h2 className='text-gray-400 text-2xl font-semibold mt-12 mb-6 hidden lg:inline'>{t('contact_me')}</h2>
         <Toaster />
         <div className='inline lg:flex justify-around my-24 px-8'>
           <div className='flex-1 text-center lg:text-start'>
