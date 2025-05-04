@@ -21,28 +21,16 @@ export default function Footer() {
         </div>
         <div className='flex items-center justify-center flex-1 gap-3'>
           <a href='https://www.linkedin.com/in/jessica-iacovozzi/' target='_blank' rel='noreferrer' aria-label='Visit my LinkedIn profile'>
-            <BsLinkedin className='hover:text-pink text-2xl' role="img" aria-labelledby="linkedin-title">
-              <title id="linkedin-title">LinkedIn</title>
-            </BsLinkedin>
-            <span className="sr-only">Visit my LinkedIn profile</span>
+            <BsLinkedin className='hover:text-pink text-2xl' role="img" title="Visit my LinkedIn profile" />
           </a>
           <a href='https://github.com/jessica-iacovozzi/' target='_blank' rel='noreferrer' aria-label='Check out my GitHub repositories'>
-            <BsGithub className='hover:text-pink text-2xl' role="img" aria-labelledby="github-title">
-              <title id="github-title">GitHub</title>
-            </BsGithub>
-            <span className="sr-only">Check out my GitHub repositories</span>
+            <BsGithub className='hover:text-pink text-2xl' role="img" title="Check out my GitHub repositories" />
           </a>
           <a href='mailto:iacovozzi.jessica@gmail.com' aria-label='Send me an email at iacovozzi.jessica@gmail.com'>
-            <TfiEmail className='hover:text-pink text-2xl' role="img" aria-labelledby="email-title">
-              <title id="email-title">Email</title>
-            </TfiEmail>
-            <span className="sr-only">Send me an email at iacovozzi.jessica@gmail.com</span>
+            <TfiEmail className='hover:text-pink text-2xl' role="img" title="Send me an email at iacovozzi.jessica@gmail.com" />
           </a>
           <a href='https://www.buymeacoffee.com/jiacovozzi' target='_blank' rel='noreferrer' aria-label='Support me by buying me a coffee'>
-            <SiBuymeacoffee className='hover:text-pink text-2xl' role="img" aria-labelledby="coffee-title">
-              <title id="coffee-title">Buy Me a Coffee</title>
-            </SiBuymeacoffee>
-            <span className="sr-only">Support me by buying me a coffee</span>
+            <SiBuymeacoffee className='hover:text-pink text-2xl' role="img" title="Support me by buying me a coffee" />
           </a>
         </div>
         <div className='flex justify-center flex-1 gap-1'>
