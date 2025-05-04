@@ -45,9 +45,6 @@ export default function Projects({ projectsRef }) {
     onClick: PropTypes.func
   };
 
-  // No CustomDots component needed anymore
-
-  // Define slider settings
   const settings = {
     dots: true,
     speed: 750,
@@ -58,7 +55,6 @@ export default function Projects({ projectsRef }) {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     appendDots: (dots) => {
-      // Use dots directly to preserve react-slick's functionality
       return (
         <div className="slick-dots-container">
           <ul className="slick-dots">
@@ -76,7 +72,6 @@ export default function Projects({ projectsRef }) {
         <span className="sr-only">{i + 1}</span>
       </button>
     ),
-    // No beforeChange needed anymore
   };
 
   return (
