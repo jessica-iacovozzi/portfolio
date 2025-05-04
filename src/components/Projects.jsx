@@ -45,6 +45,8 @@ export default function Projects({ projectsRef }) {
     onClick: PropTypes.func
   };
 
+  // No CustomDots component needed anymore
+
   // Define slider settings
   const settings = {
     dots: true,
@@ -55,24 +57,26 @@ export default function Projects({ projectsRef }) {
     arrows: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    dotsClass: "slick-dots",
-    focusOnSelect: true,
-    appendDots: dots => (
-      <div>
-        <ul style={{ margin: "0px" }} role="tablist"> {dots} </ul>
-      </div>
-    ),
+    appendDots: (dots) => {
+      // Use dots directly to preserve react-slick's functionality
+      return (
+        <div className="slick-dots-container">
+          <ul className="slick-dots">
+            {dots}
+          </ul>
+        </div>
+      );
+    },
     customPaging: i => (
       <button 
         type="button"
-        role="tab"
         aria-label={`${t('go_to_slide')} ${i + 1}`}
-        aria-selected="false"
         tabIndex="0"
       >
         <span className="sr-only">{i + 1}</span>
       </button>
-    )
+    ),
+    // No beforeChange needed anymore
   };
 
   return (
