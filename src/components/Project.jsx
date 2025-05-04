@@ -28,7 +28,7 @@ export default function Project({ project }) {
         </div>
       </div>
       <div className='flex-1 flex lg:h-3/4 lg:me-20 pt-16 px-10'>
-        <img src={project.image} alt="mockup" className='project-img' />
+        <img src={project.image} alt={`Mockup of ${project.name}`} className='project-img' />
       </div>
     </div>
   )

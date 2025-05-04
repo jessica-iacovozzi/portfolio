@@ -21,7 +21,7 @@ export default function Header() {
             iteration="1"
             className='header-text text-5xl md:text-7xl lg:text-9xl text-white text-center lg:text-start'
             fillMode="both">
-            <span aria-hidden="true">{t('hi')}</span>
+            <h2 className="header-text text-5xl md:text-7xl lg:text-9xl text-white text-center lg:text-start">{t('hi')}</h2>
           </MovingComponent>
           <MovingComponent
             type="fadeInFromBottom"

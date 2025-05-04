@@ -85,7 +85,7 @@ export default function Contact({ contactRef }) {
         <div className='inline lg:flex justify-around my-24 px-8'>
           <div className='flex-1 text-center lg:text-start'>
             <h2 className='text-white text-4xl lg:text-5xl mb-5'>{t('contact_title')}</h2>
-            <p className='text-gray-400 text-2xl mb-12'>{t('contact_subtitle')}</p>
+            <h3 className='text-gray-400 text-2xl mb-12'>{t('contact_subtitle')}</h3>
             <div className='group hidden lg:inline'>
               <a 
                 className="flex items-center text-pink text-lg group-hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400" 
