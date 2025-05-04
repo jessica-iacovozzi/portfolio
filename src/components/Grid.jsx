@@ -25,6 +25,9 @@ function Grid() {
       initial="hidden"
       animate="visible"
       className="svg"
+      aria-hidden="true"
+      role="presentation"
+      focusable="false"
     >
       <motion.line
         x1="-200"

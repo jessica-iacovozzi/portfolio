@@ -10,11 +10,69 @@ import { useTranslation } from "react-i18next";
 export default function Projects({ projectsRef }) {
   const { t } = useTranslation();
 
+  // Custom arrow components to avoid DOM warnings
+  const NextArrow = (props) => {
+    const { className, onClick } = props;
+    return (
+      <button 
+        type="button" 
+        className={className}
+        onClick={onClick}
+        aria-label={t('next_project')}
+      />
+    );
+  };
+  
+  NextArrow.propTypes = {
+    className: PropTypes.string,
+    onClick: PropTypes.func
+  };
+
+  const PrevArrow = (props) => {
+    const { className, onClick } = props;
+    return (
+      <button 
+        type="button" 
+        className={className}
+        onClick={onClick}
+        aria-label={t('previous_project')}
+      />
+    );
+  };
+  
+  PrevArrow.propTypes = {
+    className: PropTypes.string,
+    onClick: PropTypes.func
+  };
+
+  // Define slider settings
   const settings = {
     dots: true,
     speed: 750,
     swipeToSlide: true,
-    className: "slider"
+    className: "slider",
+    accessibility: true,
+    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    dotsClass: "slick-dots",
+    focusOnSelect: true,
+    appendDots: dots => (
+      <div>
+        <ul style={{ margin: "0px" }} role="tablist"> {dots} </ul>
+      </div>
+    ),
+    customPaging: i => (
+      <button 
+        type="button"
+        role="tab"
+        aria-label={`${t('go_to_slide')} ${i + 1}`}
+        aria-selected="false"
+        tabIndex="0"
+      >
+        <span className="sr-only">{i + 1}</span>
+      </button>
+    )
   };
 
   return (
