@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next"
-import MovingComponent from 'react-moving-text'
+import { Suspense, lazy } from 'react'
+
+const MobileMenu = lazy(() => import('./MobileMenu'))
 
 interface RefObject {
   current: HTMLDivElement | null
@@ -22,22 +24,24 @@ export default function Navbar({ aboutRef, projectsRef, contactRef, AtTop, scrol
   return (
     <header className='w-full fixed top-0 z-40'>
       <div className={divClassnames}>
-        <MovingComponent
-          type="fadeInFromTop"
-          duration={1000}
-          delay={0}
-          direction="normal"
-          timing="ease"
-          iteration="1"
-          fill="both">
+        <div className="animate-fade-in-down">
           <nav aria-label={t('main_navigation')}>
-            <ul className='flex text-gray-200 sm:text-2xl lg:text-xl justify-center lg:justify-start lg:px-14 py-7' role="menu">
-              <li role="none"><button onClick={() => scrollToRef(aboutRef!)} className='me-4 lg:me-16 link focus:outline-none' role="menuitem" aria-label={t('about')}>{t('about')}</button></li>
-              <li role="none"><button onClick={() => scrollToRef(projectsRef!)} className='me-4 lg:me-12 link focus:outline-none' role="menuitem" aria-label={t('projects')}>{t('projects')}</button></li>
-              <li role="none"><button onClick={() => scrollToRef(contactRef!)} className='link focus:outline-none' role="menuitem" aria-label={t('contact')}>{t('contact')}</button></li>
+            <ul className='hidden sm:flex text-gray-200 text-lg sm:text-xl lg:text-xl justify-center lg:justify-start lg:px-14 py-7' role="menu">
+              <li role="none"><button onClick={() => scrollToRef(aboutRef!)} className='me-4 lg:me-16 link focus:outline-none text-base sm:text-lg lg:text-xl' role="menuitem" aria-label={t('about')}>{t('about')}</button></li>
+              <li role="none"><button onClick={() => scrollToRef(projectsRef!)} className='me-4 lg:me-12 link focus:outline-none text-base sm:text-lg lg:text-xl' role="menuitem" aria-label={t('projects')}>{t('projects')}</button></li>
+              <li role="none"><button onClick={() => scrollToRef(contactRef!)} className='link focus:outline-none text-base sm:text-lg lg:text-xl' role="menuitem" aria-label={t('contact')}>{t('contact')}</button></li>
             </ul>
           </nav>
-        </MovingComponent>
+        </div>
+        
+        <Suspense fallback={<div className="sm:hidden fixed top-4 right-4 z-50 w-12 h-12 bg-gray-800 rounded-lg animate-pulse"></div>}>
+          <MobileMenu 
+            aboutRef={aboutRef}
+            projectsRef={projectsRef}
+            contactRef={contactRef}
+            scrollToRef={scrollToRef}
+          />
+        </Suspense>
       </div>
     </header>
  )

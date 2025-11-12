@@ -17,6 +17,43 @@ export default {
         '2.5': '2.5px',
         '3': '3px'
       },
+      animation: {
+        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+        'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
+      },
+      keyframes: {
+        fadeInUp: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(20px)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)'
+          }
+        },
+        fadeInDown: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(-20px)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)'
+          }
+        }
+      },
+      animationDelay: {
+        '0': '0ms',
+        '200': '200ms',
+        '400': '400ms',
+      },
+      mediaQueries: {
+        '(prefers-reduced-motion: reduce)': {
+          animation: 'none !important',
+          transition: 'none !important',
+        }
+      }
     },
   },
   // eslint-disable-next-line no-undef

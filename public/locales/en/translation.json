@@ -35,5 +35,7 @@
   "dbh_description": "This website allows you to browse through various dog breeds and learn about their distinctive traits. Hopefully, it'll make it easier for people to find the ideal furry companion. It is a <span class='text-pink'>React</span> application written in <span class='text-pink'>Typescript</span> that communicates with API Ninjas' dog API.",
   "surl_description": "This web app enables you to generate concise URLs effortlessly. It's a <span class='text-pink'>Ruby on Rails</span> app styled with <span class='text-pink'>TailwindCSS</span>, offering streamlined link management and a user-friendly interface for optimal user experience.",
   "it_description": "This is a web app that allows you to track project bugs effectively. It was developed using <span class='text-pink'>Next.js</span> in <span class='text-pink'>TypeScript</span> and it leverages <span class='text-pink'>React</span> and <span class='text-pink'>Radix UI</span> libraries for seamless bug tracking and offers comprehensive features.",
-  "cce_description": "This web app allows you to calculate the annual maintenance cost of owning a cat. It is a <span class='text-pink'>Next.js</span> application written in <span class='text-pink'>Typescript</span> and uses <span class='text-pink'>Supabase</span> for database management and authentication."
+  "cce_description": "This web app allows you to calculate the annual maintenance cost of owning a cat. It is a <span class='text-pink'>Next.js</span> application written in <span class='text-pink'>Typescript</span> and uses <span class='text-pink'>Supabase</span> for database management and authentication.",
+  "open_menu": "Open menu",
+  "close_menu": "Close menu"
 }
