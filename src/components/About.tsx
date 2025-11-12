@@ -15,7 +15,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>(function About({ aboutRef }
         <h2 className='text-gray-400 text-2xl font-semibold mt-12 mb-6'>{t('about_me')}</h2>
 
         <div className='flex-1 flex flex-col justify-center text-white bg-transparent backdrop-blur-md m-10 lg:m-20 text-center'>
-          <p className='text-xl'>{t('me_description')}
+          <p className='text-lg sm:text-xl'>{t('me_description')}
           </p>
         </div>
       </div>

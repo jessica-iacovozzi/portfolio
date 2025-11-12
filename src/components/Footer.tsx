@@ -33,7 +33,7 @@ export default function Footer(): JSX.Element {
             <SiBuymeacoffee className='hover:text-pink text-2xl' aria-hidden="true" />
           </a>
         </div>
-        <div className='flex justify-center flex-1 gap-1'>
+        <div className='hidden sm:flex justify-center flex-1 gap-1'>
           <button 
             onClick={() => changeLocale(locale === 'en' ? 'fr' : 'en')} 
             className='hover:font-bold transition-all duration-200' 

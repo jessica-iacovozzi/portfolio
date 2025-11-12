@@ -24,7 +24,7 @@ export default function Project({ project }: ProjectProps): JSX.Element {
           <h3 className="text-5xl text-white font-bold">{project.name}</h3>
           <p className="text-gray-400 text-xl font-semibold mt-8 lg:me-8" dangerouslySetInnerHTML={{ __html: project.description }}></p>
         </div>
-        <div className="text-xl flex flex-col w-fit">
+        <div className="text-xl flex flex-col w-fit items-center lg:items-start">
           <Button link={project.appLink} target={true} text={t('visit_website')} />
           <a 
             className="text-gray-400 text-sm w-fit link mt-8 flex items-center" 
