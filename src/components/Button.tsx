@@ -1,6 +1,10 @@
-import PropTypes from 'prop-types';
+interface ButtonProps {
+  link: string
+  text: string
+  target?: boolean
+}
 
-export default function Button({ link, text, target }) {
+export default function Button({ link, text, target }: ButtonProps): JSX.Element {
   return (
     <a 
       href={link} 
@@ -13,10 +17,4 @@ export default function Button({ link, text, target }) {
       <span className="relative w-full text-left text-white transition-colors duration-300 ease-in-out group-hover:text-gray-950">{text}</span>
     </a>
   )
-}
-
-Button.propTypes = {
-  link: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  target: PropTypes.bool
 }

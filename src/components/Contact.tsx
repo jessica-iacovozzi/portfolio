@@ -1,41 +1,50 @@
-import './Contact.css';
-import styles from "./Contact.module.css";
-import classNames from "classnames";
-import emailjs from '@emailjs/browser';
-import * as Yup from 'yup';
-import { useTranslation } from "react-i18next";
-import { useState } from 'react';
-import { useFormik } from 'formik';
-import toast, { Toaster } from "react-hot-toast";
-import { TfiEmail} from 'react-icons/tfi';
-import { MdOutlineClose } from "react-icons/md";
-import { SiMinutemailer } from "react-icons/si";
-import PropTypes from 'prop-types';
+import './Contact.css'
+import styles from "./Contact.module.css"
+import classNames from "classnames"
+import emailjs from '@emailjs/browser'
+import * as Yup from 'yup'
+import { useTranslation } from "react-i18next"
+import { useState } from 'react'
+import { useFormik } from 'formik'
+import toast, { Toaster } from "react-hot-toast"
+import { TfiEmail} from 'react-icons/tfi'
+import { MdOutlineClose } from "react-icons/md"
+import { SiMinutemailer } from "react-icons/si"
 
-export default function Contact({ contactRef }) {
-  const { t } = useTranslation();
-  const [buttonState, setButtonState] = useState(t('send_message'));
+interface ContactProps {
+  contactRef?: React.RefObject<HTMLDivElement>
+}
+
+interface FormValues {
+  from_name: string
+  reply_to: string
+  message: string
+}
+
+export default function Contact({ contactRef }: ContactProps): JSX.Element {
+  const { t } = useTranslation()
+  const [buttonState, setButtonState] = useState<string>(t('send_message'))
 
   const notify = () =>
     toast.custom(
       (tt) => (
         <div
           className={classNames([
-            styles.notificationWrapper,
+            styles['notificationWrapper'],
             tt.visible ? "top-0" : "-top-96",
           ])}
           role="alert"
           aria-live="assertive"
           aria-atomic="true"
         >
-          <div className={styles.iconWrapper} aria-hidden="true">
+          <div className={styles['iconWrapper']} aria-hidden="true">
             <SiMinutemailer />
           </div>
-          <div className={styles.contentWrapper}>
+          <div className={styles['contentWrapper']}>
             <h2 className="text-xl font-bold">{t('form_notif')}</h2>
           </div>
           <button 
-            className={styles.closeIcon} 
+            className={styles['closeIcon']} 
             onClick={() => toast.dismiss(tt.id)}
             aria-label={t('close_notification')}
             type="button"
@@ -45,37 +54,37 @@ export default function Contact({ contactRef }) {
         </div>
       ),
       { id: "unique-notification", position: "top-right" }
-  );
+  )
 
-  const formik = useFormik({
+  const formik = useFormik<FormValues>({
     initialValues: {
       from_name: '',
       reply_to: '',
       message: ''
-          },
+    },
     validationSchema: Yup.object({
-       from_name: Yup.string()
-      .required(t('required_name')),
-       reply_to: Yup.string().email(t('invalid_email'))
-      .required(t('required_email')),
-       message: Yup.string().required(t('required_message'))
+      from_name: Yup.string()
+        .required(t('required_name')),
+      reply_to: Yup.string().email(t('invalid_email'))
+        .required(t('required_email')),
+      message: Yup.string().required(t('required_message'))
     }),
-    onSubmit: (values, {setSubmitting, resetForm}) => {
-       try{
-      emailjs.send('service_stqbexb' , 'template_gl4fykr', values, 'A0yMhGCbJrQ8dMh6q')
-        .then(() => {
-           setButtonState(t('send_message'));
-           setSubmitting(false);
-           resetForm();
-           notify();
-              });
-       }
-       catch {
-          setButtonState(t('send_message'));
-          setSubmitting(false);
+    onSubmit: (values: FormValues, {setSubmitting, resetForm}) => {
+      try {
+        emailjs.send('service_stqbexb' , 'template_gl4fykr', values as unknown as Record<string, unknown>, 'A0yMhGCbJrQ8dMh6q')
+          .then(() => {
+            setButtonState(t('send_message'))
+            setSubmitting(false)
+            resetForm()
+            notify()
+          })
       }
-       },
-    });
+      catch {
+        setButtonState(t('send_message'))
+        setSubmitting(false)
+      }
+    },
+  })
 
   return (
     <div ref={contactRef} id='contact' className='lg:h-screen xl:h-3/4 mt-80 lg:mt-28 xl:mt-60'>
@@ -163,7 +172,7 @@ export default function Contact({ contactRef }) {
                 aria-required="true" 
                 aria-invalid={formik.touched.message && formik.errors.message ? "true" : "false"}
                 aria-describedby={formik.touched.message && formik.errors.message ? "message-error" : undefined}
-                rows="4"
+                rows={4}
               />
               <div 
                 id="message-error"
@@ -186,9 +195,5 @@ export default function Contact({ contactRef }) {
         </div>
       </div>
     </div>
-  );
-}
-
-Contact.propTypes = {
-  contactRef: PropTypes.object
+  )
 }

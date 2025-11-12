@@ -1,16 +1,16 @@
-import { BsGithub, BsLinkedin } from 'react-icons/bs';
-import { TfiEmail } from 'react-icons/tfi';
-import { SiBuymeacoffee } from 'react-icons/si';
-import { useContext } from 'react';
-import LocaleContext from '../LocaleContext';
-import i18n from '../i18n';
+import { BsGithub, BsLinkedin } from 'react-icons/bs'
+import { TfiEmail } from 'react-icons/tfi'
+import { SiBuymeacoffee } from 'react-icons/si'
+import { useContext } from 'react'
+import LocaleContext from '../LocaleContext'
+import i18n from '../i18n'
 
-export default function Footer() {
-  const { locale } = useContext(LocaleContext);
+export default function Footer(): JSX.Element {
+  const { locale } = useContext(LocaleContext)
 
-  function changeLocale (l) {
+  function changeLocale(l: string): void {
     if (locale !== l) {
-      i18n.changeLanguage(l);
+      i18n.changeLanguage(l)
     }
   }
 

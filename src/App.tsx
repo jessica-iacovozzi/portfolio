@@ -12,7 +12,7 @@ import Loading from './components/Loading'
 import LocaleContext from './LocaleContext'
 
 interface RefObject {
-  current: HTMLElement | null
+  current: HTMLDivElement | null
   focus?: () => void
   offsetTop: number
 }
@@ -22,10 +22,10 @@ export default function App(): JSX.Element {
   const [locale, setLocale] = useState<string>(i18n.language)
   const [isAtTop, setIsAtTop] = useState<boolean>(true)
   const [scroll, setScroll] = useState<RefObject | undefined>()
-  const aboutRef = useRef<HTMLElement>(null)
-  const projectsRef = useRef<HTMLElement>(null)
-  const contactRef = useRef<HTMLElement>(null)
-  const contentRef = useRef<HTMLElement>(null)
+  const aboutRef = useRef<HTMLDivElement>(null)
+  const projectsRef = useRef<HTMLDivElement>(null)
+  const contactRef = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
   const marginTop = 85
 
   useEffect(() => {
@@ -103,7 +103,7 @@ export default function App(): JSX.Element {
           {t('skip_to_content')}
         </a>
         
-        <Navbar AtTop={isAtTop} scrollToRef={scrollToRef} aboutRef={aboutRef} projectsRef={projectsRef} contactRef={contactRef} />
+        <Navbar AtTop={isAtTop} scrollToRef={scrollToRef} aboutRef={aboutRef as RefObject} projectsRef={projectsRef as RefObject} contactRef={contactRef as RefObject} />
         
         <main id="main-content" ref={contentRef} tabIndex={-1}>
           <Header />

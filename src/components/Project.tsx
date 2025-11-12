@@ -1,10 +1,21 @@
-import { FiExternalLink } from 'react-icons/fi';
-import Button from './Button.jsx';
-import PropTypes from 'prop-types';
-import { useTranslation } from "react-i18next";
+import { FiExternalLink } from 'react-icons/fi'
+import Button from './Button'
+import { useTranslation } from "react-i18next"
 
-export default function Project({ project }) {
-  const { t } = useTranslation();
+interface Project {
+  name: string
+  appLink: string
+  codeLink: string
+  image: any
+  description: string
+}
+
+interface ProjectProps {
+  project: Project
+}
+
+export default function Project({ project }: ProjectProps): JSX.Element {
+  const { t } = useTranslation()
 
   return (
     <div className='inline lg:flex items-center lg:h-5/6 pb-10'>
@@ -32,8 +43,4 @@ export default function Project({ project }) {
       </div>
     </div>
   )
-}
-
-Project.propTypes = {
-  project: PropTypes.object
 }

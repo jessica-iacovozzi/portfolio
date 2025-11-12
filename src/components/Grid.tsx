@@ -1,22 +1,22 @@
-import './Grid.css';
-import { motion } from "framer-motion";
+import './Grid.css'
+import { motion, Variants } from "framer-motion"
 
-function Grid() {
-  const draw = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: (i) => {
-      const delay = 0.25 + i * 0.25;
-      return {
-        pathLength: 1,
-        opacity: 0.3,
-        transition: {
-          pathLength: { delay, type: "spring", duration: 1.5, bounce: 0 },
-          opacity: { delay, duration: 0.01 }
-        }
-      };
+const draw: Variants = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: (i: number) => {
+    const delay = 0.25 + i * 0.25
+    return {
+      pathLength: 1,
+      opacity: 0.3,
+      transition: {
+        pathLength: { delay, type: "spring", duration: 1.5, bounce: 0 },
+        opacity: { delay, duration: 0.01 }
+      }
     }
-  };
+  }
+}
 
+export default function Grid(): JSX.Element {
   return (
       <motion.svg
       width="2000"
@@ -293,5 +293,3 @@ function Grid() {
     </motion.svg>
   )
 }
-
-export default Grid;

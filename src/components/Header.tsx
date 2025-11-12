@@ -1,11 +1,11 @@
-import './Header.css';
-import MovingComponent from 'react-moving-text';
-import Grid from './Grid.jsx';
-import Button from './Button.jsx';
-import { useTranslation } from "react-i18next";
+import './Header.css'
+import MovingComponent from 'react-moving-text'
+import Grid from './Grid'
+import Button from './Button'
+import { useTranslation } from "react-i18next"
 
-export default function Header() {
-  const { t } = useTranslation();
+export default function Header(): JSX.Element {
+  const { t } = useTranslation()
 
   return (
     <div className='bg-gray-950 lg:h-screen flex flex-col sticky inset-0'>
@@ -14,23 +14,22 @@ export default function Header() {
         <header>
           <MovingComponent
             type="fadeInFromBottom"
-            duration="1000ms"
-            delay="0s"
+            duration={1000}
+            delay={0}
             direction="normal"
             timing="ease"
             iteration="1"
-            className='header-text text-5xl md:text-7xl lg:text-9xl text-white text-center lg:text-start'
-            fillMode="both">
+            fill="both">
             <h2 className="header-text text-5xl md:text-7xl lg:text-9xl text-white text-center lg:text-start">{t('hi')}</h2>
           </MovingComponent>
           <MovingComponent
             type="fadeInFromBottom"
-            duration="1000ms"
-            delay="0ms"
+            duration={1000}
+            delay={0}
             direction="normal"
             timing="ease"
             iteration="1"
-            fillMode="both">
+            fill="both">
             <h1 className='header-text text-5xl md:text-7xl lg:text-9xl text-white leading-tight text-center lg:text-start'>
               Jessica Iacovozzi
             </h1>
@@ -38,12 +37,12 @@ export default function Header() {
         </header>
         <MovingComponent
           type="fadeInFromBottom"
-          duration="1000ms"
-          delay="0ms"
+          duration={1000}
+          delay={0}
           direction="normal"
           timing="ease"
           iteration="1"
-          fillMode="both">
+          fill="both">
           <Button link="#projects" target={false} text={t('header_btn')} />
         </MovingComponent>
       </div>
