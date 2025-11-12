@@ -34,9 +34,13 @@ export default function Footer(): JSX.Element {
           </a>
         </div>
         <div className='flex justify-center flex-1 gap-1'>
-          <button onClick={() => changeLocale('en')} className={locale === 'en' ? 'font-bold' : ''} aria-label='Switch language to English' aria-pressed={locale === 'en'}>EN</button>
-          |
-          <button onClick={() => changeLocale('fr')} className={locale === 'fr' ? 'font-bold' : ''} aria-label='Switch language to French' aria-pressed={locale === 'fr'}>FR</button>
+          <button 
+            onClick={() => changeLocale(locale === 'en' ? 'fr' : 'en')} 
+            className='hover:font-bold transition-all duration-200' 
+            aria-label={`Switch language to ${locale === 'en' ? 'French' : 'English'}`}
+          >
+            {locale === 'en' ? 'FR' : 'EN'}
+          </button>
         </div>
     </footer>
   )

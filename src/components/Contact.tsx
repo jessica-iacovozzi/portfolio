@@ -97,7 +97,7 @@ export default function Contact({ contactRef }: ContactProps): JSX.Element {
             <h3 className='text-gray-400 text-2xl mb-12'>{t('contact_subtitle')}</h3>
             <div className='group hidden lg:inline'>
               <a 
-                className="flex items-center text-pink text-lg group-hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400" 
+                className="flex items-center text-pink text-lg group-hover:text-white focus:outline-none" 
                 href="mailto:iacovozzi.jessica@gmail.com"
                 aria-label="Email me at iacovozzi.jessica@gmail.com"
               >
@@ -110,7 +110,7 @@ export default function Contact({ contactRef }: ContactProps): JSX.Element {
             <div className='mb-4'>
               <label className='mb-1 font-medium' htmlFor="from_name">
                 {t('name')}
-                <span className="text-red-500 ml-1" aria-hidden="true">*</span>
+                <span className="text-red-800 ml-1" aria-hidden="true">*</span>
               </label>
               <input 
                 type="text" 
@@ -119,14 +119,14 @@ export default function Contact({ contactRef }: ContactProps): JSX.Element {
                 onChange={formik.handleChange} 
                 onBlur={formik.handleBlur}
                 value={formik.values.from_name} 
-                className='w-full rounded-md text-2xl text-gray-950 p-2 focus:outline-none focus:ring-2 focus:ring-blue-400' 
+                className='w-full rounded-md text-2xl text-gray-950 p-2 focus:outline-none' 
                 aria-required="true" 
                 aria-invalid={formik.touched.from_name && formik.errors.from_name ? "true" : "false"}
                 aria-describedby={formik.touched.from_name && formik.errors.from_name ? "from_name-error" : undefined}
               />
               <div 
                 id="from_name-error"
-                className={`expandable text-red-700 ${formik.touched.from_name && formik.errors.from_name ? 'show' : ''}`}
+                className={`expandable text-red-800 ${formik.touched.from_name && formik.errors.from_name ? 'show' : ''}`}
                 aria-live="polite"
               >
                 {formik.errors.from_name}
@@ -135,7 +135,7 @@ export default function Contact({ contactRef }: ContactProps): JSX.Element {
             <div className='mb-4'>
               <label className='my-1 font-medium' htmlFor="reply_to">
                 {t('email')}
-                <span className="text-red-500 ml-1" aria-hidden="true">*</span>
+                <span className="text-red-800 ml-1" aria-hidden="true">*</span>
               </label>
               <input 
                 type="email" 
@@ -144,14 +144,14 @@ export default function Contact({ contactRef }: ContactProps): JSX.Element {
                 onChange={formik.handleChange} 
                 onBlur={formik.handleBlur}
                 value={formik.values.reply_to} 
-                className='w-full rounded-md text-2xl text-gray-950 p-2 focus:outline-none focus:ring-2 focus:ring-blue-400' 
+                className='w-full rounded-md text-2xl text-gray-950 p-2 focus:outline-none' 
                 aria-required="true" 
                 aria-invalid={formik.touched.reply_to && formik.errors.reply_to ? "true" : "false"}
                 aria-describedby={formik.touched.reply_to && formik.errors.reply_to ? "reply_to-error" : undefined}
               />
               <div 
                 id="reply_to-error"
-                className={`expandable text-red-700 ${formik.touched.reply_to && formik.errors.reply_to ? 'show' : ''}`}
+                className={`expandable text-red-800 ${formik.touched.reply_to && formik.errors.reply_to ? 'show' : ''}`}
                 aria-live="polite"
               >
                 {formik.errors.reply_to}
@@ -160,7 +160,7 @@ export default function Contact({ contactRef }: ContactProps): JSX.Element {
             <div className='mb-4'>
               <label className='my-1 font-medium' htmlFor="message">
                 {t('message')}
-                <span className="text-red-500 ml-1" aria-hidden="true">*</span>
+                <span className="text-red-800 ml-1" aria-hidden="true">*</span>
               </label>
               <textarea 
                 id="message" 
@@ -168,7 +168,7 @@ export default function Contact({ contactRef }: ContactProps): JSX.Element {
                 onChange={formik.handleChange} 
                 onBlur={formik.handleBlur}
                 value={formik.values.message} 
-                className='w-full rounded-md text-2xl text-gray-950 p-2 focus:outline-none focus:ring-2 focus:ring-blue-400' 
+                className='w-full rounded-md text-2xl text-gray-950 p-2 focus:outline-none' 
                 aria-required="true" 
                 aria-invalid={formik.touched.message && formik.errors.message ? "true" : "false"}
                 aria-describedby={formik.touched.message && formik.errors.message ? "message-error" : undefined}
@@ -176,7 +176,7 @@ export default function Contact({ contactRef }: ContactProps): JSX.Element {
               />
               <div 
                 id="message-error"
-                className={`expandable text-red-700 ${formik.touched.message && formik.errors.message ? 'show' : ''}`}
+                className={`expandable text-red-800 ${formik.touched.message && formik.errors.message ? 'show' : ''}`}
                 aria-live="polite"
               >
                 {formik.errors.message}
@@ -185,7 +185,7 @@ export default function Contact({ contactRef }: ContactProps): JSX.Element {
             <button 
               type="submit" 
               disabled={formik.isSubmitting} 
-              className="w-fit mx-auto text-lg relative inline-flex border-2 mt-2 border-white hover:border-gray-950 px-6 py-3 overflow-hidden font-medium transition-all bg-gray-950 rounded-lg hover:bg-gray-950 group focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-fit mx-auto text-lg relative inline-flex border-2 mt-2 border-white hover:border-gray-950 px-6 py-3 overflow-hidden font-medium transition-all bg-gray-950 rounded-lg hover:bg-gray-950 group focus:outline-none"
               aria-label={formik.isSubmitting ? t('sending_message') : t('send_message')}
             >
               <span className="w-48 h-48 rounded rotate-[-40deg] bg-white absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
