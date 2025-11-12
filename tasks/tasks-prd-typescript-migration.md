@@ -43,12 +43,12 @@
   - [ ] 2.3 Install `@typescript-eslint/parser` and `@typescript-eslint/eslint-plugin`
   - [ ] 2.4 Create custom type declarations for libraries without official types
 
-- [ ] 3.0 Migrate Core Application Files
-  - [ ] 3.1 Migrate `src/main.jsx` to `src/main.tsx` with proper React types
-  - [ ] 3.2 Migrate `src/App.jsx` to `src/App.tsx` with component interface
-  - [ ] 3.3 Migrate `src/LocaleContext.jsx` to `src/LocaleContext.tsx` with context types
-  - [ ] 3.4 Migrate `src/i18n.js` to `src/i18n.ts` with configuration types
-  - [ ] 3.5 Migrate `src/projects_data.js` to `src/projects_data.ts` with data structures
+- [x] 3.0 Migrate Core Application Files
+  - [x] 3.1 Migrate `src/main.jsx` to `src/main.tsx` with proper React types
+  - [x] 3.2 Migrate `src/App.jsx` to `src/App.tsx` with component interface
+  - [x] 3.3 Migrate `src/LocaleContext.jsx` to `src/LocaleContext.tsx` with context types
+  - [x] 3.4 Migrate `src/i18n.js` to `src/i18n.ts` with configuration types
+  - [x] 3.5 Migrate `src/projects_data.js` to `src/projects_data.ts` with data structures
 
 - [ ] 4.0 Migrate Component Files
   - [ ] 4.1 Migrate `src/components/About.jsx` to `About.tsx` with prop interface

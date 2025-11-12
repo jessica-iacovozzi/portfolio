@@ -1,13 +1,21 @@
-import CharityFinder from './assets/charity_finder.png';
-import Rmr from './assets/rmr.png';
-import DogBreedHub from './assets/db_hub.png';
-import IssueTracker from './assets/issuetracker.png';
-import RosettasAngels from './assets/rosettas_angels.png';
-import CatCostEstimator from './assets/cat_cost_estimator.png';
-import i18n from './i18n';
+import CharityFinder from './assets/charity_finder.png'
+import Rmr from './assets/rmr.png'
+import DogBreedHub from './assets/db_hub.png'
+import IssueTracker from './assets/issuetracker.png'
+import RosettasAngels from './assets/rosettas_angels.png'
+import CatCostEstimator from './assets/cat_cost_estimator.png'
+import i18n from './i18n'
+
+interface Project {
+  name: string
+  appLink: string
+  codeLink: string
+  image: any // Image imports don't have specific types in Vite
+  description: string
+}
 
 // Initialize project objects without descriptions first
-const projects = [
+const projects: Project[] = [
   {
     name: "Cat Cost Estimator",
     appLink: "https://cat-cost-estimator.vercel.app/",
@@ -50,39 +58,39 @@ const projects = [
     image: IssueTracker,
     description: ''
   }
-];
+]
 
 // This function fills the descriptions only when translations are definitely available
-function fillProjectDescriptions() {
+function fillProjectDescriptions(): boolean {
   // Only fill if i18n is initialized and the translation namespace is loaded
   if (i18n.isInitialized && i18n.hasResourceBundle(i18n.language, 'translation')) {
-    projects[0].description = i18n.t('cce_description');
-    projects[1].description = i18n.t('ra_description');
-    projects[2].description = i18n.t('rmr_description');
-    projects[3].description = i18n.t('dbh_description');
-    projects[4].description = i18n.t('cf_description');
-    projects[5].description = i18n.t('it_description');
-    return true;
+    if (projects[0]) projects[0].description = i18n.t('cce_description')
+    if (projects[1]) projects[1].description = i18n.t('ra_description')
+    if (projects[2]) projects[2].description = i18n.t('rmr_description')
+    if (projects[3]) projects[3].description = i18n.t('dbh_description')
+    if (projects[4]) projects[4].description = i18n.t('cf_description')
+    if (projects[5]) projects[5].description = i18n.t('it_description')
+    return true
   }
-  return false;
+  return false
 }
 
 // Try to fill initially - will only succeed if translations are already loaded
-fillProjectDescriptions();
+fillProjectDescriptions()
 
 // Set up event listeners for when the app is ready
 i18n.on('initialized', () => {
-  fillProjectDescriptions();
-});
+  fillProjectDescriptions()
+})
 
 // Also handle language changes
 i18n.on('languageChanged', () => {
-  fillProjectDescriptions();
-});
+  fillProjectDescriptions()
+})
 
 // Additional safety - listen for when translations are loaded
 i18n.store.on('added', () => {
-  fillProjectDescriptions();
-});
+  fillProjectDescriptions()
+})
 
-export default projects;
+export default projects
