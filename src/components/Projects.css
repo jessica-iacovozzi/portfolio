@@ -33,7 +33,9 @@
 }
 
 .slick-dots {
-  bottom: 65px!important;
+  display: flex!important;
+  justify-content: center!important;
+  position: static!important;
 }
 
 .slick-dots {

@@ -19,16 +19,16 @@ export default function Project({ project }: ProjectProps): JSX.Element {
   const { t } = useTranslation()
 
   return (
-    <div className='flex flex-col lg:flex-row items-center lg:h-5/6 pb-6 lg:pb-10 px-4 lg:px-0'>
-      <div className="lg:w-1/2 flex-1 flex flex-col items-center lg:items-start px-4 lg:px-10 py-6 lg:py-5 lg:p-28 order-2 lg:order-1">
+    <div className='flex flex-col lg:flex-row items-center lg:h-5/6 pb-6 lg:pb-10 px-10'>
+      <div className="lg:w-1/2 flex-1 flex flex-col items-center lg:items-start md:px-4 lg:px-10 py-6 lg:py-5 lg:p-28 order-2 lg:order-1">
         <div className="flex flex-col justify-evenly text-center lg:text-start w-full">
           <h3 className="text-3xl sm:text-4xl lg:text-5xl text-white font-bold mb-4 lg:mb-8">{project.name}</h3>
-          <p className="text-gray-400 lg:text-xl font-semibold mb-6 lg:mb-8 lg:me-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: project.description }}></p>
+          <p className="text-gray-400 lg:text-xl lg:font-semibold mb-6 lg:mb-8 lg:me-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: project.description }}></p>
         </div>
         <div className="text-lg lg:text-xl flex flex-col sm:flex-row lg:flex-col w-full items-center justify-center lg:items-start gap-4 sm:gap-6 lg:gap-0">
           <Button link={project.appLink} target={true} text={t('visit_website')} />
           <a 
-            className="text-gray-400 text-sm lg:text-base w-fit link flex items-center hover:text-pink transition-colors duration-200 min-h-[44px]" 
+            className="text-gray-400 text-sm lg:text-base w-fit link flex items-center hover:text-pink transition-colors duration-200 min-h-[44px] md:mt-2" 
             href={project.codeLink} 
             target="_blank" 
             rel="noreferrer"
