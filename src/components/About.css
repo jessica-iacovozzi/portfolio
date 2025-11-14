@@ -23,3 +23,54 @@
     height: 600px;
   }
 }
+
+/* Profile Flip Card Classes - Following user's proven pattern */
+.flippable-profile-container {
+  height: 192px;
+  width: 192px;
+}
+
+@media (min-width: 640px) {
+  .flippable-profile-container {
+    height: 224px;
+    width: 224px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .flippable-profile-container {
+    height: 256px;
+    width: 256px;
+  }
+}
+
+.profile-card {
+  position: relative !important;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  height: 100%;
+  width: 100%;
+  border-radius: 9999px !important;
+}
+
+.profile-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.profile-card img,
+.profile-front,
+.profile-back {
+  width: 100%;
+  height: 100%;
+  position: absolute !important;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 9999px !important;
+  border-color: #FFC0CB !important;
+  border-width: 1px !important;
+}
+
+.profile-back {
+  transform: rotateY(180deg);
+}
