@@ -15,11 +15,11 @@ export default function Footer(): JSX.Element {
   }
 
   return (
-    <footer className='flex flex-col sm:flex-row items-center justify-center text-gray-200 text-sm pt-8 pb-4 px-4 mt-10 border-t-1.5 border-pink bg-gray-950/50 backdrop-blur-sm'>
+    <footer className='flex flex-col sm:flex-row items-center justify-center text-gray-200 text-sm py-6 px-4 mt-20 border-t-1.5 border-pink bg-gray-950/50 backdrop-blur-sm'>
       <div className='hidden md:flex justify-center flex-1 text-center text-xs sm:text-sm text-gray-400 mt-4 sm:mt-0 sm:ml-4'>
         &copy; {new Date().getFullYear()} Jessica Iacovozzi
       </div>
-      <div className='flex items-center justify-center space-x-12 sm:space-x-4 mb-4 sm:mb-0 flex-1'>
+      <div className='flex items-center justify-center space-x-12 sm:space-x-4 flex-1'>
         <a href='https://www.linkedin.com/in/jessica-iacovozzi-8a7a8a1b9/' target='_blank' rel='noreferrer' aria-label='Visit my LinkedIn profile (opens in a new tab)'>
           <BsLinkedin className='hover:text-pink text-xl sm:text-2xl transition-colors duration-200 min-h-[24px] min-w-[24px]' aria-hidden="true" />
         </a>

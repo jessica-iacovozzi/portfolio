@@ -20,7 +20,7 @@ export default function Project({ project }: ProjectProps): JSX.Element {
 
   return (
     <div className='flex flex-col lg:flex-row items-center lg:h-5/6 pb-6 lg:pb-10 px-10'>
-      <div className="lg:w-1/2 flex-1 flex flex-col items-center lg:items-start md:px-4 lg:px-10 py-6 lg:py-5 lg:p-28 order-2 lg:order-1">
+      <div className="lg:w-1/2 flex-1 flex flex-col items-center lg:items-start md:px-4 py-6 lg:py-5 order-2 lg:order-1">
         <div className="flex flex-col justify-evenly text-center lg:text-start w-full">
           <h3 className="text-3xl sm:text-4xl lg:text-5xl text-white font-bold mb-4 lg:mb-8">{project.name}</h3>
           <p className="text-gray-400 lg:text-xl lg:font-semibold mb-6 lg:mb-8 lg:me-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: project.description }}></p>
@@ -39,7 +39,7 @@ export default function Project({ project }: ProjectProps): JSX.Element {
           </a>
         </div>
       </div>
-      <div className='flex-1 flex lg:h-3/4 lg:me-20 pt-6 lg:pt-16 px-4 lg:px-10 order-1 lg:order-2 mb-8 lg:mb-0'>
+      <div className='flex-1 flex lg:h-3/4 xl:me-20 pt-6 lg:pt-16 px-4 lg:px-10 order-1 lg:order-2 mb-8 lg:mb-0'>
         <LazyImage 
           src={project.image} 
           alt={`Mockup of ${project.name}`} 

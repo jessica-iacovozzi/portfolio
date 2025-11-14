@@ -51,7 +51,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>(function About({ aboutRef }
       <div className='flex flex-col items-center relative xl:px-20 bg-gray-950/25 backdrop-blur border-y-1.5 border-pink px-4 py-6'>
         <h2 className='text-gray-400 text-xl lg:text-2xl font-semibold mt-8 lg:mt-12 mb-4 lg:mb-6'>{t('about_me')}</h2>
 
-        <div className='flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 m-6 lg:m-20 text-center lg:text-left px-4 lg:px-0 w-full max-w-6xl'>
+        <div className='flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 m-6 lg:m-20 text-center lg:text-left px-4 py-6 lg:px-10 w-full max-w-6xl'>
           {/* Profile Flip Card */}
           <div className='flippable-profile-container'>
             <div 

@@ -41,27 +41,13 @@ export default function MobileMenu({ aboutRef, projectsRef, contactRef, scrollTo
   // Body scroll locking
   useEffect(() => {
     if (isOpen) {
-      const scrollY = window.scrollY
       document.body.style.overflow = 'hidden'
-      document.body.style.position = 'fixed'
-      document.body.style.top = `-${scrollY}px`
-      document.body.style.width = '100%'
     } else {
-      const scrollY = document.body.style.top
       document.body.style.overflow = ''
-      document.body.style.position = ''
-      document.body.style.top = ''
-      document.body.style.width = ''
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || '0') * -1)
-      }
     }
 
     return () => {
       document.body.style.overflow = ''
-      document.body.style.position = ''
-      document.body.style.top = ''
-      document.body.style.width = ''
     }
   }, [isOpen])
 
@@ -127,7 +113,7 @@ export default function MobileMenu({ aboutRef, projectsRef, contactRef, scrollTo
 
       {/* Mobile Menu Overlay */}
       <div 
-        className={`sm:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
+        className={`sm:hidden h-screen fixed inset-0 z-40 transition-opacity duration-300 ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         role="dialog"
