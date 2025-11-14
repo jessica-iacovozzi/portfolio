@@ -15,7 +15,7 @@ export default function Footer(): JSX.Element {
   }
 
   return (
-    <footer className='flex flex-col sm:flex-row items-center justify-center text-gray-200 text-sm pt-8 pb-4 px-4 border-t border-gray-800 bg-gray-950/50 backdrop-blur-sm'>
+    <footer className='flex flex-col sm:flex-row items-center justify-center text-gray-200 text-sm pt-8 pb-4 px-4 mt-10 border-t-1.5 border-pink bg-gray-950/50 backdrop-blur-sm'>
       <div className='hidden md:flex justify-center flex-1 text-center text-xs sm:text-sm text-gray-400 mt-4 sm:mt-0 sm:ml-4'>
         &copy; {new Date().getFullYear()} Jessica Iacovozzi
       </div>

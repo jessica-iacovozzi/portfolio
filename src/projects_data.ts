@@ -1,5 +1,4 @@
 import CharityFinder from './assets/charity_finder.png'
-import Rmr from './assets/rmr.png'
 import DogBreedHub from './assets/db_hub.png'
 import IssueTracker from './assets/issuetracker.png'
 import RosettasAngels from './assets/rosettas_angels.png'
@@ -24,17 +23,10 @@ const projects: Project[] = [
     description: '' // Will be filled when i18n is ready
   },
   {
-    name: "Rosetta's Angels v2",
-    appLink: "https://rosettas-angels.vercel.app/",
+    name: "Rosetta's Angels",
+    appLink: "https://rosettasangels.org/",
     codeLink: "https://github.com/jessica-iacovozzi/rosettas-angels",
     image: RosettasAngels,
-    description: ''
-  },
-  {
-    name: "Rosetta's Angels v1",
-    appLink: "https://rosettasangels.org/",
-    codeLink: "https://github.com/jessica-iacovozzi/rmr-rails",
-    image: Rmr,
     description: ''
   },
   {
@@ -66,10 +58,9 @@ function fillProjectDescriptions(): boolean {
   if (i18n.isInitialized && i18n.hasResourceBundle(i18n.language, 'translation')) {
     if (projects[0]) projects[0].description = i18n.t('cce_description')
     if (projects[1]) projects[1].description = i18n.t('ra_description')
-    if (projects[2]) projects[2].description = i18n.t('rmr_description')
-    if (projects[3]) projects[3].description = i18n.t('dbh_description')
-    if (projects[4]) projects[4].description = i18n.t('cf_description')
-    if (projects[5]) projects[5].description = i18n.t('it_description')
+    if (projects[2]) projects[2].description = i18n.t('dbh_description')
+    if (projects[3]) projects[3].description = i18n.t('cf_description')
+    if (projects[4]) projects[4].description = i18n.t('it_description')
     return true
   }
   return false

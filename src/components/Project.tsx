@@ -23,7 +23,7 @@ export default function Project({ project }: ProjectProps): JSX.Element {
       <div className="lg:w-1/2 flex-1 flex flex-col items-center lg:items-start px-4 lg:px-10 py-6 lg:py-5 lg:p-28 order-2 lg:order-1">
         <div className="flex flex-col justify-evenly text-center lg:text-start w-full">
           <h3 className="text-3xl sm:text-4xl lg:text-5xl text-white font-bold mb-4 lg:mb-8">{project.name}</h3>
-          <p className="text-gray-400 text-lg lg:text-xl font-semibold mb-6 lg:mb-8 lg:me-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: project.description }}></p>
+          <p className="text-gray-400 lg:text-xl font-semibold mb-6 lg:mb-8 lg:me-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: project.description }}></p>
         </div>
         <div className="text-lg lg:text-xl flex flex-col sm:flex-row lg:flex-col w-full items-center justify-center lg:items-start gap-4 sm:gap-6 lg:gap-0">
           <Button link={project.appLink} target={true} text={t('visit_website')} />
