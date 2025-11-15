@@ -56,6 +56,37 @@ export default function Contact({ contactRef }: ContactProps): JSX.Element {
       { id: "unique-notification", position: "top-right" }
   )
 
+  const notifyError = () =>
+    toast.custom(
+      (tt) => (
+        <div
+          className={classNames([
+            styles['notificationWrapper'],
+            tt.visible ? "top-28" : "-top-96",
+          ])}
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div className={styles['iconWrapper']} aria-hidden="true">
+            <SiMinutemailer />
+          </div>
+          <div className={styles['contentWrapper']}>
+            <h2 className="text-xl font-bold">{t('form_error')}</h2>
+          </div>
+          <button 
+            className={styles['closeIcon']} 
+            onClick={() => toast.dismiss(tt.id)}
+            aria-label={t('close_notification')}
+            type="button"
+          >
+            <MdOutlineClose aria-hidden="true" />
+          </button>
+        </div>
+      ),
+      { id: "unique-error-notification", position: "top-right" }
+  )
+
   const formik = useFormik<FormValues>({
     initialValues: {
       from_name: '',
@@ -69,18 +100,17 @@ export default function Contact({ contactRef }: ContactProps): JSX.Element {
         .required(t('required_email')),
       message: Yup.string().required(t('required_message'))
     }),
-    onSubmit: (values: FormValues, {setSubmitting, resetForm}) => {
+    onSubmit: async (values: FormValues, {setSubmitting, resetForm}) => {
       try {
-        emailjs.send('service_stqbexb' , 'template_gl4fykr', values as unknown as Record<string, unknown>, 'A0yMhGCbJrQ8dMh6q')
-          .then(() => {
-            setButtonState(t('send_message'))
-            setSubmitting(false)
-            resetForm()
-            notify()
-          })
-      }
-      catch {
+        setButtonState(t('sending_message'))
+        await emailjs.send('service_stqbexb' , 'template_gl4fykr', values as unknown as Record<string, unknown>, 'A0yMhGCbJrQ8dMh6q')
         setButtonState(t('send_message'))
+        resetForm()
+        notify()
+      } catch {
+        setButtonState(t('send_message'))
+        notifyError()
+      } finally {
         setSubmitting(false)
       }
     },

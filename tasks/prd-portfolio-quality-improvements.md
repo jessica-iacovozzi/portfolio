@@ -203,7 +203,7 @@ The feature is considered successful when all of the following are met on the pr
 
 ## 9. Open Questions
 
-1. **EmailJS Credentials**: Are the current EmailJS identifiers acceptable to keep in the client, or should they be rotated and partially moved behind a serverless function?
+1. **EmailJS Credentials (current decision)**: For this portfolio iteration, the EmailJS service ID, template ID, and public key will remain in the client, consistent with EmailJS’s public-key model. If abuse or stricter security requirements arise in the future, consider rotating credentials and moving the send logic behind a small serverless function.
 2. **Structured Data**: Should JSON-LD structured data be added now, or left for a later SEO-focused iteration?
 3. **Animation Preferences**: Should the site explicitly respect `prefers-reduced-motion` (e.g., disabling Grid animations) for users who prefer minimal motion?
 4. **Future Localization URLs**: If you later introduce distinct language URLs (e.g., `/fr`), should this PRD be extended to include `hreflang` tags and more advanced SEO for each locale?

@@ -9,6 +9,7 @@
   "hi": "Hi, my name is",
   "header_btn": "Check out my work",
   "form_notif": "Message sent successfully!",
+  "form_error": "Something went wrong. Please try again.",
   "required_name": "Your name is required",
   "required_email": "Your email is required",
   "required_message": "Your message is required",

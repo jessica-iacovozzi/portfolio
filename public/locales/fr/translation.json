@@ -9,6 +9,7 @@
   "hi": "Allo! Je m'appelle",
   "header_btn": "Voici mes projets",
   "form_notif": "Message envoyé!",
+  "form_error": "Une erreur est survenue. Veuillez réessayer.",
   "required_name": "Votre nom est requis",
   "required_email": "Votre courriel est requis",
   "required_message": "Votre message est requis",
