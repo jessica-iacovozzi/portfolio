@@ -31,7 +31,7 @@ export default function Project({ project }: ProjectProps): JSX.Element {
             className="text-gray-400 text-sm lg:text-base w-fit link flex items-center hover:text-pink transition-colors duration-200 min-h-[44px] md:mt-2" 
             href={project.codeLink} 
             target="_blank" 
-            rel="noreferrer"
+            rel="noreferrer noopener"
             aria-label={`${t('source_code')} ${project.name} (opens in a new tab)`}
           >
             {t('source_code')}

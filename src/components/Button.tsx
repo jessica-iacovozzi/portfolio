@@ -9,7 +9,7 @@ export default function Button({ link, text, target }: ButtonProps): JSX.Element
     <a 
       href={link} 
       target={target ? "_blank" : ""} 
-      rel={target ? "noreferrer" : ""} 
+      rel={target ? "noreferrer noopener" : ""} 
       className="w-fit text-lg relative inline-flex border-2 lg:mt-5 border-white hover:border-gray-950 justify-center px-6 py-3 overflow-hidden font-medium transition-all bg-gray-950 rounded-lg hover:bg-gray-950 group min-h-[44px] min-w-[120px] items-center active:scale-95 touch-manipulation"
       aria-label={`${text}${target ? ' (opens in a new tab)' : ''}`}
     >

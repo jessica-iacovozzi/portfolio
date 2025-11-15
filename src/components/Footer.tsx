@@ -20,16 +20,16 @@ export default function Footer(): JSX.Element {
         &copy; {new Date().getFullYear()} Jessica Iacovozzi
       </div>
       <div className='flex items-center justify-center space-x-12 sm:space-x-4 flex-1'>
-        <a href='https://www.linkedin.com/in/jessica-iacovozzi-8a7a8a1b9/' target='_blank' rel='noreferrer' aria-label='Visit my LinkedIn profile (opens in a new tab)'>
+        <a href='https://www.linkedin.com/in/jessica-iacovozzi-8a7a8a1b9/' target='_blank' rel='noreferrer noopener' aria-label='Visit my LinkedIn profile (opens in a new tab)'>
           <BsLinkedin className='hover:text-pink text-xl sm:text-2xl transition-colors duration-200 min-h-[24px] min-w-[24px]' aria-hidden="true" />
         </a>
-        <a href='https://github.com/jessica-iacovozzi/' target='_blank' rel='noreferrer' aria-label='Check out my GitHub repositories (opens in a new tab)'>
+        <a href='https://github.com/jessica-iacovozzi/' target='_blank' rel='noreferrer noopener' aria-label='Check out my GitHub repositories (opens in a new tab)'>
           <BsGithub className='hover:text-pink text-xl sm:text-2xl transition-colors duration-200 min-h-[24px] min-w-[24px]' aria-hidden="true" />
         </a>
         <a href='mailto:iacovozzi.jessica@gmail.com' aria-label='Send me an email at iacovozzi.jessica@gmail.com'>
           <TfiEmail className='hover:text-pink text-xl sm:text-2xl transition-colors duration-200 min-h-[24px] min-w-[24px]' aria-hidden="true" />
         </a>
-        <a href='https://www.buymeacoffee.com/jiacovozzi' target='_blank' rel='noreferrer' aria-label='Support me by buying me a coffee (opens in a new tab)'>
+        <a href='https://www.buymeacoffee.com/jiacovozzi' target='_blank' rel='noreferrer noopener' aria-label='Support me by buying me a coffee (opens in a new tab)'>
           <SiBuymeacoffee className='hover:text-pink text-xl sm:text-2xl transition-colors duration-200 min-h-[24px] min-w-[24px]' aria-hidden="true" />
         </a>
       </div>
