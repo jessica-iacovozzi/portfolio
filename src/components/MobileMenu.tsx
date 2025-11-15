@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect, useContext, useRef } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import LocaleContext from '../LocaleContext'
 
@@ -22,6 +22,8 @@ export default function MobileMenu({ aboutRef, projectsRef, contactRef, scrollTo
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [_isScrolled, setIsScrolled] = useState<boolean>(false)
   const [isAnimating, setIsAnimating] = useState<boolean>(false)
+  const triggerRef = useRef<HTMLButtonElement | null>(null)
+  const firstNavButtonRef = useRef<HTMLButtonElement | null>(null)
 
   useEffect(() => {
     const handleScroll = (): void => {
@@ -68,6 +70,16 @@ export default function MobileMenu({ aboutRef, projectsRef, contactRef, scrollTo
     }
   }, [isOpen])
 
+  useEffect(() => {
+    if (isOpen && firstNavButtonRef.current) {
+      firstNavButtonRef.current.focus()
+    }
+
+    if (!isOpen && triggerRef.current) {
+      triggerRef.current.focus()
+    }
+  }, [isOpen])
+
   const toggleMenu = (event?: React.MouseEvent): void => {
     if (isAnimating) return
     event?.preventDefault()
@@ -97,6 +109,7 @@ export default function MobileMenu({ aboutRef, projectsRef, contactRef, scrollTo
     <>
     {/* Hamburger Menu Button */}
     <button
+      ref={triggerRef}
       onClick={(e) => toggleMenu(e)}
       className={`sm:hidden fixed top-4 right-4 p-3 text-pink transition-all duration-300 outline-none ring-2 ring-pink min-h-[44px] min-w-[44px] flex items-center justify-center active:scale-95 touch-manipulation rounded-lg z-50 ${
         isOpen ? 'bg-gray-950' : 'backdrop-blur-sm bg-gray-950/90'
@@ -134,7 +147,6 @@ export default function MobileMenu({ aboutRef, projectsRef, contactRef, scrollTo
           className={`absolute right-0 top-0 h-full w-80 max-w-full bg-gray-950 shadow-2xl transform transition-all duration-300 ease-in-out ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
-          role="menu"
         >
           <div className="flex flex-col h-full p-6 pt-20">
             {/* Menu Title */}
@@ -144,34 +156,32 @@ export default function MobileMenu({ aboutRef, projectsRef, contactRef, scrollTo
             
             {/* Navigation Links */}
             <nav aria-label={t('main_navigation')} className="flex-1">
-              <ul className="space-y-2" role="menu">
-                <li role="none">
+              <ul className="space-y-2">
+                <li>
                   <button
+                    ref={firstNavButtonRef}
                     onClick={(e) => handleNavigation(aboutRef!, e)}
                     className="w-full text-left text-lg text-gray-200 hover:text-pink transition-all duration-200 py-4 px-4 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-pink focus:bg-gray-900 transform hover:scale-105 active:scale-95 touch-manipulation min-h-[48px]"
-                    role="menuitem"
                     aria-label={t('about')}
                     tabIndex={isOpen ? 0 : -1}
                   >
                     {t('about')}
                   </button>
                 </li>
-                <li role="none">
+                <li>
                   <button
                     onClick={(e) => handleNavigation(projectsRef!, e)}
                     className="w-full text-left text-lg text-gray-200 hover:text-pink transition-all duration-200 py-4 px-4 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-pink focus:bg-gray-900 transform hover:scale-105 active:scale-95 touch-manipulation min-h-[48px]"
-                    role="menuitem"
                     aria-label={t('projects')}
                     tabIndex={isOpen ? 0 : -1}
                   >
                     {t('projects')}
                   </button>
                 </li>
-                <li role="none">
+                <li>
                   <button
                     onClick={(e) => handleNavigation(contactRef!, e)}
                     className="w-full text-left text-lg text-gray-200 hover:text-pink transition-all duration-200 py-4 px-4 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-pink focus:bg-gray-900 transform hover:scale-105 active:scale-95 touch-manipulation min-h-[48px]"
-                    role="menuitem"
                     aria-label={t('contact')}
                     tabIndex={isOpen ? 0 : -1}
                   >
