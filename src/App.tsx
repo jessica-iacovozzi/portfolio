@@ -10,6 +10,7 @@ import Contact from './components/Contact.tsx'
 import Footer from './components/Footer.tsx'
 import Loading from './components/Loading.tsx'
 import LocaleContext from './LocaleContext.tsx'
+import { Analytics } from "@vercel/analytics/react"
 
 interface RefObject {
   current: HTMLDivElement | null
@@ -113,6 +114,7 @@ export default function App(): JSX.Element {
         </main>
         
         <Footer />
+        <Analytics />
       </Suspense>
     </LocaleContext.Provider>
   )
