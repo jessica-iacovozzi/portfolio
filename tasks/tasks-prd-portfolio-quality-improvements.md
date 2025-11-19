@@ -29,7 +29,7 @@
   - [x] 1.3 Add or refine error handling around `emailjs.send` in `Contact.tsx` so that failures show a clear, localized toast/message (without exposing technical details) and reset the form/submitting state correctly.
   - [x] 1.4 Audit the codebase for any `console.log` / `console.error` that might log form values, EmailJS responses, or other PII and remove or sanitize them.
   - [x] 1.5 Review external links in `Footer.tsx` and other components (LinkedIn, GitHub, BuyMeACoffee, mailto) to ensure appropriate `rel` attributes (e.g., `rel="noreferrer noopener"` for `target="_blank"`) and no unsafe inline scripts or `dangerouslySetInnerHTML` use.
-  - [ ] 1.6 Confirm that `i18n.ts` and the i18next HTTP backend only serve static JSON translation files from `/public/locales` and do not expose any sensitive endpoints or tokens.
+  - [x] 1.6 Confirm that `i18n.ts` and the i18next HTTP backend only serve static JSON translation files from `/public/locales` and do not expose any sensitive endpoints or tokens.
 
 - [ ] 2.0 Improve performance via bundling, lazy loading, and image optimization
   - [ ] 2.1 Run a fresh Lighthouse Performance audit on mobile and note the main bottlenecks (bundle size, image payload, main-thread work, animations).

@@ -15,6 +15,9 @@ i18n
     // Add namespaces
     ns: ['translation'],
     defaultNS: 'translation',
+    react: {
+      useSuspense: false
+    },
     interpolation: {
       escapeValue: false
     }

@@ -1,6 +1,6 @@
 import './App.css'
 import i18n from './i18n.ts'
-import { useState, useEffect, useRef, Suspense } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import Navbar from './components/Navbar.tsx'
 import Header from './components/Header.tsx'
@@ -8,7 +8,6 @@ import About from './components/About.tsx'
 import Projects from './components/Projects.tsx'
 import Contact from './components/Contact.tsx'
 import Footer from './components/Footer.tsx'
-import Loading from './components/Loading.tsx'
 import LocaleContext from './LocaleContext.tsx'
 import { Analytics } from "@vercel/analytics/react"
 
@@ -93,7 +92,6 @@ export default function App(): JSX.Element {
 
   return (
     <LocaleContext.Provider value={{locale, setLocale}}>
-      <Suspense fallback={<Loading />}>
       <a 
           href="#main-content" 
           className="skip-link" 
@@ -115,7 +113,6 @@ export default function App(): JSX.Element {
         
         <Footer />
         <Analytics />
-      </Suspense>
     </LocaleContext.Provider>
   )
 }
