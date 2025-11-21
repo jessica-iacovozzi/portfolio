@@ -18,7 +18,7 @@ interface RefObject {
 }
 
 export default function App(): JSX.Element {
-  const { t } = useTranslation()
+  const { t, ready } = useTranslation()
   const [locale, setLocale] = useState<string>(i18n.language)
   const [isAtTop, setIsAtTop] = useState<boolean>(true)
   const [scroll, setScroll] = useState<RefObject | undefined>()
@@ -89,6 +89,8 @@ export default function App(): JSX.Element {
       behavior: 'smooth'
     })
   }
+
+  if (!ready) return <div>Loading...</div>;
 
   return (
     <LocaleContext.Provider value={{locale, setLocale}}>
