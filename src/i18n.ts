@@ -19,7 +19,6 @@ i18n
       }
     },
     fallbackLng: 'en',
-    debug: true,
     load: 'all',
     react: {
       useSuspense: false
